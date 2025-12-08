@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MG Manisha Glow Ayurvedic — Premium Handmade Soaps</title>
+  <meta name="description" content="MG Manisha Glow — Premium Home Made Ayurvedic Soap. Rich Ayurvedic Wellness & Skin-Nourishing Formula." />
+  <style>
+    :root{--bg:#fffdf9;--accent:#6b8e23;--muted:#6b6b6b;--card:#ffffff}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, Arial; margin:0; background:var(--bg); color:#222}
+    .container{max-width:1000px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#9bcc5a,#5b8a2f);display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+    nav a{margin-left:14px;text-decoration:none;color:var(--muted)}
+    .hero{display:flex;gap:20px;align-items:center; margin-top:18px}
+    .hero .info{flex:1}
+    .hero .card{width:320px;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(30,30,30,0.06)}
+    h1{font-size:28px;margin:0 0 6px}
+    p.lead{margin:0 0 12px;color:var(--muted)}
+    .btn{padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white}
+    .chip{display:inline-block;padding:6px 10px;border-radius:20px;background:#fff;border:1px solid #eee;margin:4px;font-size:13px}
+    section{margin-top:26px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .product{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+    form{display:grid;gap:8px}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid #e6e6e6;width:100%}
+    footer{margin-top:26px;padding:18px 0;color:var(--muted);font-size:14px;text-align:center}
+    @media(max-width:800px){.grid{grid-template-columns:1fr}.hero{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">MG</div>
+        <div>
+          <div style="font-weight:800">MG Manisha Glow Ayurvedic</div>
+          <div style="font-size:13px;color:var(--muted)">Premium · Handmade · Ayurvedic</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#products">Products</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#order">Order</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="info">
+          <h1>Premium Home Made Ayurvedic Soap</h1>
+          <p class="lead">Rich Ayurvedic Wellness • Skin-Nourishing Formula • Luxurious Handmade Craft</p>
+          <p style="color:var(--muted)">Prepared by MG Manisha Glow — handcrafted cold-process soaps using natural Ayurvedic ingredients. No parabens, sulfates or artificial perfumes.</p>
+          <div style="margin-top:12px">
+            <button class="btn btn-primary" onclick="location.hash='#order'">Order Now via WhatsApp</button>
+            <button class="btn" onclick="location.hash='#products'">View Products</button>
+          </div>
+          <div style="margin-top:12px">
+            <span class="chip">100% Natural</span>
+            <span class="chip">Cold Process</span>
+            <span class="chip">Cruelty-Free</span>
+            <span class="chip">pH Balanced</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <strong>Key Ingredients</strong>
+          <ul style="margin:8px 0;color:var(--muted);padding-left:18px">
+            <li><strong>Neem:</strong> Antibacterial, acne control, skin-cleansing.</li>
+            <li><strong>Tulsi:</strong> Detox agent, freshness.</li>
+            <li><strong>Aloe Vera:</strong> Deep moisturization, soothes irritation.</li>
+            <li><strong>Goat Milk:</strong> Soft silky skin, rejuvenation.</li>
+            <li><strong>Vitamin D:</strong> Pigmentation reduction, glow & protection.</li>
+          </ul>
+          <div style="margin-top:8px;font-size:14px;color:var(--muted)"><strong>Manufacturing:</strong> Cold process • 20–25 days curing • Small-batch handmade</div>
+        </div>
+      </div>
+
+      <section id="products">
+        <h2>Popular Products</h2>
+        <div class="grid">
+          <div class="product">
+            <h3>Neem + Tulsi</h3>
+            <p style="color:var(--muted)">Antibacterial • Acne control • Fresh skin</p>
+            <div style="font-weight:700">₹199 / bar</div>
+            <button class="btn btn-primary" onclick="orderNow('Neem + Tulsi',199)">Order</button>
+          </div>
+
+          <div class="product">
+            <h3>Aloe Vera + Goat Milk</h3>
+            <p style="color:var(--muted)">Moisturizing • Sensitive skin • Gentle glow</p>
+            <div style="font-weight:700">₹219 / bar</div>
+            <button class="btn btn-primary" onclick="orderNow('Aloe Vera + Goat Milk',219)">Order</button>
+          </div>
+
+          <div class="product">
+            <h3>Turmeric + Vitamin D</h3>
+            <p style="color:var(--muted)">Brightening • Pigmentation control • Radiance</p>
+            <div style="font-weight:700">₹209 / bar</div>
+            <button class="btn btn-primary" onclick="orderNow('Turmeric + Vitamin D',209)">Order</button>
+          </div>
+
+          <div class="product">
+            <h3>Sandalwood Luxury</h3>
+            <p style="color:var(--muted)">Calming aroma • Premium finish</p>
+            <div style="font-weight:700">₹249 / bar</div>
+            <button class="btn btn-primary" onclick="orderNow('Sandalwood Luxury',249)">Order</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="benefits">
+        <h2>Benefits & Usage</h2>
+        <p style="color:var(--muted)">
+          <strong>Benefits:</strong> Skin glow, bacterial control, deep moisturization, reduced pigmentation & clear skin.
+        </p>
+        <ol style="color:var(--muted)">
+          <li>Wet face and create rich lather.</li>
+          <li>Massage gently 20–30 seconds.</li>
+          <li>Rinse well. Use twice daily.</li>
+          <li>Store dry after every use.</li>
+        </ol>
+      </section>
+
+      <section id="order">
+        <h2>Order Now</h2>
+        <p style="color:var(--muted)">Fill this form — order will open in WhatsApp automatically.</p>
+
+        <form id="orderForm" onsubmit="handleOrder(event)">
+          <input id="name" placeholder="Aapka naam" required />
+          <input id="phone" placeholder="Phone (91xxxxxxxxxx)" required />
+          <select id="productSelect">
+            <option value="Neem + Tulsi">Neem + Tulsi - ₹199</option>
+            <option value="Aloe Vera + Goat Milk">Aloe Vera + Goat Milk - ₹219</option>
+            <option value="Turmeric + Vitamin D">Turmeric + Vitamin D - ₹209</option>
+            <option value="Sandalwood Luxury">Sandalwood Luxury - ₹249</option>
+          </select>
+          <input id="qty" type="number" min="1" value="1" />
+          <textarea id="address" placeholder="Delivery address"></textarea>
+          <button class="btn btn-primary" type="submit">Order via WhatsApp</button>
+        </form>
+        <div id="orderMsg" style="display:none;color:green;margin-top:10px">Opening WhatsApp…</div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p style="color:var(--muted)">
+          MG Manisha Glow Ayurvedic<br/>
+          India<br/>
+          Phone: +91 8888942084<br/>
+          Instagram: @mg_manisha_glow_ayurvedic_
+        </p>
+      </section>
+
+    </main>
+
+    <footer>© 2024 MG Manisha Glow Ayurvedic • Handmade Cold-process Soaps</footer>
+
+</div>
+
+<script>
+  const businessNumber = "918888942084";
+
+  function orderNow(product, price){
+    document.getElementById("productSelect").value = product;
+    document.getElementById("qty").value = 1;
+    location.hash = "#order";
+  }
+
+  function handleOrder(e){
+    e.preventDefault();
+    const name=document.getElementById("name").value;
+    const phone=document.getElementById("phone").value;
+    const product=document.getElementById("productSelect").value;
+    const qty=document.getElementById("qty").value;
+    const address=document.getElementById("address").value;
+
+    const msg = `Hello, mera naam ${name}. Main order karna chahta/chahti hoon: ${product} (Qty: ${qty}). Address: ${address}. Phone: ${phone}`;
+    const wa=`https://wa.me/${businessNumber}?text=${encodeURIComponent(msg)}`;
+    document.getElementById("orderMsg").style.display="block";
+    window.open(wa,"_blank");
+  }
+</script>
+
+</body>
+</html>
