@@ -15,7 +15,7 @@
         overflow-x: hidden;
     }
 
-    /* 🔥 Background Logo Watermark */
+    /* 🔥 Background Logo Watermark FIXED */
     body::before {
         content: "";
         position: fixed;
@@ -23,10 +23,10 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('main logo.jpg');
+        background-image: url('main-logo.jpg'); 
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 500px;
+        background-size: 520px;
         opacity: 0.13;
         z-index: -1;
     }
@@ -95,21 +95,14 @@
         margin-top: 20px;
         text-align: center;
     }
-
-    .contact-box p {
-        color: #333;
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
 </style>
 </head>
 <body>
 
 <div class="container">
 
-<!-- 🔝 TOP LOGO -->
-<img src="main logo.jpg" class="top-logo" alt="MG Logo">
+<!-- 🔝 TOP LOGO FIXED -->
+<img src="main-logo.jpg" class="top-logo" alt="MG Logo">
 
 <h1>MG Manisha Glow Ayurvedic</h1>
 <h2>Premium Home-Made Ayurvedic Products</h2>
@@ -119,21 +112,14 @@
 
 <div class="products">
 
-    <div class="card"><h3>Neem Soap</h3><p>Anti-bacterial • Clear Skin</p><button class="btn" onclick="orderSoap('Neem Soap')">Order ₹50</button></div>
-
-    <div class="card"><h3>Tulasi Soap</h3><p>Detox • Fresh Skin</p><button class="btn" onclick="orderSoap('Tulasi Soap')">Order ₹50</button></div>
-
-    <div class="card"><h3>Aloe Vera Soap</h3><p>Moisturizing • Soft Skin</p><button class="btn" onclick="orderSoap('Aloe Vera Soap')">Order ₹50</button></div>
-
-    <div class="card"><h3>Goat Milk Soap</h3><p>Nourishing • Gentle</p><button class="btn" onclick="orderSoap('Goat Milk Soap')">Order ₹50</button></div>
-
-    <div class="card"><h3>Charcoal Soap</h3><p>Deep Clean • Oil Control</p><button class="btn" onclick="orderSoap('Charcoal Soap')">Order ₹50</button></div>
-
-    <div class="card"><h3>Turmeric Soap</h3><p>Glow • Brightening</p><button class="btn" onclick="orderSoap('Turmeric Soap')">Order ₹50</button></div>
-
-    <div class="card"><h3>Rice Potato Soap</h3><p>Tan Remove • Soft Skin</p><button class="btn" onclick="orderSoap('Rice Potato Soap')">Order ₹50</button></div>
-
-    <div class="card"><h3>Bheem Sen Kapur Alum (तुरटी) Soap</h3><p>Skin Tightening • Smooth Skin</p><button class="btn" onclick="orderSoap('Bheem Sen Kapur Alum Soap')">Order ₹50</button></div>
+    <div class="card"><h3>Neem Soap</h3><button class="btn" onclick="orderSoap('Neem Soap')">Order ₹50</button></div>
+    <div class="card"><h3>Tulasi Soap</h3><button class="btn" onclick="orderSoap('Tulasi Soap')">Order ₹50</button></div>
+    <div class="card"><h3>Aloe Vera Soap</h3><button class="btn" onclick="orderSoap('Aloe Vera Soap')">Order ₹50</button></div>
+    <div class="card"><h3>Goat Milk Soap</h3><button class="btn" onclick="orderSoap('Goat Milk Soap')">Order ₹50</button></div>
+    <div class="card"><h3>Charcoal Soap</h3><button class="btn" onclick="orderSoap('Charcoal Soap')">Order ₹50</button></div>
+    <div class="card"><h3>Turmeric Soap</h3><button class="btn" onclick="orderSoap('Turmeric Soap')">Order ₹50</button></div>
+    <div class="card"><h3>Rice Potato Soap</h3><button class="btn" onclick="orderSoap('Rice Potato Soap')">Order ₹50</button></div>
+    <div class="card"><h3>Bheem Sen Kapur Alum (तुरटी) Soap</h3><button class="btn" onclick="orderSoap('Bheem Soap')">Order ₹50</button></div>
 
 </div>
 
@@ -142,27 +128,27 @@
 
 <div class="facepack">
 
-    <div class="card"><h3>Neem Leaf Powder (Face Pack)</h3><p>Detox • Pimple Control</p><button class="btn" onclick="orderFace('Neem Leaf Powder Face Pack')">Order ₹30</button></div>
+    <div class="card"><h3>Neem Leaf Powder (Face Pack)</h3><button class="btn" onclick="orderFace('Neem Leaf Powder Face Pack')">Order ₹30</button></div>
 
-    <div class="card"><h3>Moisturizer Face Pack</h3><p>Soft • Hydrating • Glow</p><button class="btn" onclick="orderFace('Moisturizer Face Pack')">Order ₹30</button></div>
+    <div class="card"><h3>Moisturizer Face Pack</h3><button class="btn" onclick="orderFace('Moisturizer Face Pack')">Order ₹30</button></div>
 
 </div>
 
-<!-- CONTACT DETAILS -->
+<!-- CONTACT BOX -->
 <h2>📞 Contact Details</h2>
 
 <div class="contact-box">
-    <p><strong>Contact Name:</strong> MG Manisha Glow Ayurvedic</p>
-    <p><strong>Mobile Number:</strong> 8888942084</p>
-    <p><strong>WhatsApp Number:</strong> 8888942084</p>
-    <p><strong>Address:</strong> At Post Rawande, Tal Kopargaon, Dist Ahilyanagar 423601</p>
+    <p><strong>Name:</strong> MG Manisha Glow Ayurvedic</p>
+    <p><strong>Mobile:</strong> 8888942084</p>
+    <p><strong>WhatsApp:</strong> 8888942084</p>
+    <p><strong>Address:</strong> At Post Rawande, Tal Kopargaon, Dist Ahilyanagar - 423601</p>
     <p><strong>Email:</strong> mgayurvedicc@gmail.com</p>
     <p><strong>Instagram:</strong> @mg_manisha_glow_Ayurvedic_</p>
     <p><strong>Website:</strong> https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/</p>
 </div>
 
-<!-- 🔻 BOTTOM LOGO -->
-<img src="main logo.jpg" class="bottom-logo" alt="MG Logo">
+<!-- 🔻 BOTTOM LOGO FIXED -->
+<img src="main-logo.jpg" class="bottom-logo" alt="MG Logo">
 
 <footer>
     © <span id="year"></span> MG Manisha Glow Ayurvedic
@@ -175,16 +161,12 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const wa = "918888942084";
 
-/* SOAP ORDER ₹50 */
 function orderSoap(product){
-    const msg = `Hello, mujhe ${product} (₹50) order karna hai.`;
-    window.open(`https://wa.me/${wa}?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/${wa}?text=${encodeURIComponent('Hello, mujhe ' + product + ' (₹50) order karna hai.')}`);
 }
 
-/* FACE PACK ₹30 */
 function orderFace(product){
-    const msg = `Hello, mujhe ${product} (₹30) order karna hai.`;
-    window.open(`https://wa.me/${wa}?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/${wa}?text=${encodeURIComponent('Hello, mujhe ' + product + ' (₹30) order karna hai.')}`);
 }
 </script>
 
