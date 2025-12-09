@@ -152,7 +152,7 @@
     <div class="card"><h3>🖤 Charcoal Soap</h3><input type="number" id="Charcoal" min="0"></div>
     <div class="card"><h3>✨ Turmeric Soap</h3><input type="number" id="Turmeric" min="0"></div>
     <div class="card"><h3>🍚 Rice Potato Soap</h3><input type="number" id="Rice" min="0"></div>
-    <div class="card"><h3>🧪 Bheem Sen Kapur Soap</h3><input type="number" id="Bheem" min="0"></div>
+    <div class="card"><h3> Bheem Sen Kapur Soap</h3><input type="number" id="Bheem" min="0"></div>
 
 </div>
 
@@ -262,11 +262,6 @@ function placeOrder() {
 ${addr}  
 
 ----------------------------------  
-🙏 *धन्यवाद आम्हाला Order दिल्या बद्दल!*  
-🌿 नक्कीच तुम्हाला आमचा Product आवडेल व फायदा होईल  
-📦 आम्ही लवकरात लवकर तुमची Order तुमच्या पर्यंत पोहोचवू  
-💚 धन्यवाद 🙏🙏`;
-
     window.open(`https://wa.me/918888942084?text=${encodeURIComponent(msg)}`);
 }
 </script>
