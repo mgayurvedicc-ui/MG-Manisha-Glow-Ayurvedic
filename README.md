@@ -279,7 +279,7 @@ function placeOrder() {
     }
 
     let orderMsg =
-`🛒 *New Order*
+``🛒🛒 *New Order*
 --------------------
 *Quantities:*
 Neem: ${Neem.value}
