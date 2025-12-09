@@ -6,167 +6,177 @@
 <title>MG Manisha Glow Ayurvedic</title>
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background: #fffdf9;
-        position: relative;
-        overflow-x: hidden;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    background: #fffdf9;
+    position: relative;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('main-logo.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 500px;
+    opacity: 0.13;
+    z-index: -1;
+}
 
-    /* 🔥 Background Logo Watermark FIXED */
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('main-logo.jpg'); 
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 520px;
-        opacity: 0.13;
-        z-index: -1;
-    }
+.container { max-width: 1100px; margin: auto; padding: 20px; }
+h1, h2 { text-align: center; color: #1f3812; }
 
-    .top-logo {
-        width: 130px;
-        display: block;
-        margin: 20px auto;
-    }
+.card {
+    background: #ffffffdd;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px #0001;
+    margin: 10px 0;
+}
 
-    .bottom-logo {
-        width: 110px;
-        display: block;
-        margin: 10px auto;
-    }
+.btn {
+    background: #6b8e23;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+}
 
-    .container {
-        max-width: 1100px;
-        margin: auto;
-        padding: 20px;
-    }
+.order-box {
+    background: #ffffffee;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px #0002;
+    margin-top: 25px;
+}
 
-    h1, h2 {
-        text-align: center;
-        color: #1f3812;
-    }
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
 
-    .products, .facepack {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-        margin-top: 20px;
-    }
+.bottom-logo { width: 110px; display: block; margin: 20px auto; }
+.top-logo { width: 130px; display: block; margin: 20px auto; }
 
-    .card {
-        background: rgba(255,255,255,0.90);
-        border-radius: 12px;
-        padding: 18px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.10);
-        backdrop-filter: blur(3px);
-    }
+footer { text-align: center; padding: 20px; color: #777; }
 
-    .btn {
-        background: #6b8e23;
-        color: white;
-        padding: 10px 14px;
-        border-radius: 6px;
-        border: none;
-        cursor: pointer;
-        margin-top: 10px;
-        width: 100%;
-    }
-
-    footer {
-        text-align: center;
-        color: #666;
-        margin-top: 40px;
-        padding-bottom: 20px;
-    }
-
-    .contact-box {
-        background: rgba(255,255,255,0.90);
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-        margin-top: 20px;
-        text-align: center;
-    }
 </style>
 </head>
+
 <body>
 
 <div class="container">
 
-<!-- 🔝 TOP LOGO FIXED -->
-<img src="main-logo.jpg" class="top-logo" alt="MG Logo">
+<!-- TOP LOGO -->
+<img src="main-logo.jpg" class="top-logo">
 
 <h1>MG Manisha Glow Ayurvedic</h1>
 <h2>Premium Home-Made Ayurvedic Products</h2>
 
-<!-- SOAP LIST -->
-<h2>🧼 Soap Collection (₹50 Each)</h2>
+<!-- ORDER FORM -->
+<div class="order-box">
+<h2>🛒 Place Your Order</h2>
 
-<div class="products">
+<label>Product चुनें:</label>
+<select id="product">
+    <option value="Neem Soap" data-price="50">Neem Soap (₹50)</option>
+    <option value="Tulasi Soap" data-price="50">Tulasi Soap (₹50)</option>
+    <option value="Aloe Vera Soap" data-price="50">Aloe Vera Soap (₹50)</option>
+    <option value="Goat Milk Soap" data-price="50">Goat Milk Soap (₹50)</option>
+    <option value="Charcoal Soap" data-price="50">Charcoal Soap (₹50)</option>
+    <option value="Turmeric Soap" data-price="50">Turmeric Soap (₹50)</option>
+    <option value="Rice Potato Soap" data-price="50">Rice Potato Soap (₹50)</option>
+    <option value="Bheem Sen Kapur Alum Soap" data-price="50">Bheem Sen Kapur Alum (₹50)</option>
 
-    <div class="card"><h3>Neem Soap</h3><button class="btn" onclick="orderSoap('Neem Soap')">Order ₹50</button></div>
-    <div class="card"><h3>Tulasi Soap</h3><button class="btn" onclick="orderSoap('Tulasi Soap')">Order ₹50</button></div>
-    <div class="card"><h3>Aloe Vera Soap</h3><button class="btn" onclick="orderSoap('Aloe Vera Soap')">Order ₹50</button></div>
-    <div class="card"><h3>Goat Milk Soap</h3><button class="btn" onclick="orderSoap('Goat Milk Soap')">Order ₹50</button></div>
-    <div class="card"><h3>Charcoal Soap</h3><button class="btn" onclick="orderSoap('Charcoal Soap')">Order ₹50</button></div>
-    <div class="card"><h3>Turmeric Soap</h3><button class="btn" onclick="orderSoap('Turmeric Soap')">Order ₹50</button></div>
-    <div class="card"><h3>Rice Potato Soap</h3><button class="btn" onclick="orderSoap('Rice Potato Soap')">Order ₹50</button></div>
-    <div class="card"><h3>Bheem Sen Kapur Alum (तुरटी) Soap</h3><button class="btn" onclick="orderSoap('Bheem Soap')">Order ₹50</button></div>
+    <option value="Neem Leaf Powder Face Pack" data-price="30">Neem Leaf Powder Face Pack (₹30)</option>
+    <option value="Moisturizer Face Pack" data-price="30">Moisturizer Face Pack (₹30)</option>
+</select>
 
+<label>Quantity:</label>
+<input type="number" id="qty" placeholder="0" min="1">
+
+<label>Customer Name:</label>
+<input type="text" id="custname" placeholder="अपना नाम लिखें">
+
+<label>Customer Address:</label>
+<textarea id="address" placeholder="पूरा address लिखें"></textarea>
+
+<label>Total Amount:</label>
+<input type="text" id="total" readonly>
+
+<button class="btn" onclick="placeOrder()">📩 Send Order on WhatsApp</button>
 </div>
 
-<!-- FACE PACK -->
-<h2>🌿 Face Pack Collection (₹30 Each)</h2>
-
-<div class="facepack">
-
-    <div class="card"><h3>Neem Leaf Powder (Face Pack)</h3><button class="btn" onclick="orderFace('Neem Leaf Powder Face Pack')">Order ₹30</button></div>
-
-    <div class="card"><h3>Moisturizer Face Pack</h3><button class="btn" onclick="orderFace('Moisturizer Face Pack')">Order ₹30</button></div>
-
-</div>
-
-<!-- CONTACT BOX -->
+<!-- CONTACT DETAILS -->
 <h2>📞 Contact Details</h2>
-
-<div class="contact-box">
-    <p><strong>Name:</strong> MG Manisha Glow Ayurvedic</p>
-    <p><strong>Mobile:</strong> 8888942084</p>
-    <p><strong>WhatsApp:</strong> 8888942084</p>
-    <p><strong>Address:</strong> At Post Rawande, Tal Kopargaon, Dist Ahilyanagar - 423601</p>
-    <p><strong>Email:</strong> mgayurvedicc@gmail.com</p>
-    <p><strong>Instagram:</strong> @mg_manisha_glow_Ayurvedic_</p>
-    <p><strong>Website:</strong> https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/</p>
+<div class="card">
+    <p><b>Name:</b> MG Manisha Glow Ayurvedic</p>
+    <p><b>Mobile:</b> 8888942084</p>
+    <p><b>WhatsApp:</b> 8888942084</p>
+    <p><b>Address:</b> At Post Rawande, Tal Kopargaon, Dist Ahilyanagar 423601</p>
+    <p><b>Email:</b> mgayurvedicc@gmail.com</p>
+    <p><b>Instagram:</b> @mg_manisha_glow_Ayurvedic_</p>
+    <p><b>Website:</b> https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/</p>
 </div>
 
-<!-- 🔻 BOTTOM LOGO FIXED -->
-<img src="main-logo.jpg" class="bottom-logo" alt="MG Logo">
+<!-- BOTTOM LOGO -->
+<img src="main-logo.jpg" class="bottom-logo">
 
-<footer>
-    © <span id="year"></span> MG Manisha Glow Ayurvedic
-</footer>
+<footer>© <span id="year"></span> MG Manisha Glow Ayurvedic</footer>
 
 </div>
+
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const wa = "918888942084";
+// Auto calculate total when qty changes
+document.getElementById("qty").addEventListener("input", function(){
+    let product = document.getElementById("product");
+    let price = product.options[product.selectedIndex].dataset.price;
+    let qty = document.getElementById("qty").value;
+    document.getElementById("total").value = qty * price;
+});
 
-function orderSoap(product){
-    window.open(`https://wa.me/${wa}?text=${encodeURIComponent('Hello, mujhe ' + product + ' (₹50) order karna hai.')}`);
-}
+// WhatsApp order system
+function placeOrder(){
+    let product = document.getElementById("product").value;
+    let price = document.getElementById("product").options[product.selectedIndex].dataset.price;
+    let qty = document.getElementById("qty").value;
+    let name = document.getElementById("custname").value;
+    let address = document.getElementById("address").value;
+    let total = qty * price;
 
-function orderFace(product){
-    window.open(`https://wa.me/${wa}?text=${encodeURIComponent('Hello, mujhe ' + product + ' (₹30) order karna hai.')}`);
+    if(!qty || !name || !address){
+        alert("कृपया सभी details भरें!");
+        return;
+    }
+
+    let msg = 
+`🛒 *New Order*
+------------------------
+📦 Product: ${product}
+🔢 Quantity: ${qty}
+💰 Price: ₹${price}
+💵 Total Amount: ₹${total}
+
+👤 Customer Name: ${name}
+
+🏠 Address:
+${address}
+
+धन्यवाद!`;
+
+    window.open(`https://wa.me/918888942084?text=${encodeURIComponent(msg)}`);
 }
 </script>
 
