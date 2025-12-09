@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MG Manisha Glow Ayurvedic</title>
+<title>🌿 MG Manisha Glow Ayurvedic</title>
 
 <style>
     body {
@@ -137,61 +137,63 @@
 
 <img src="main-logo.jpg" class="top-logo">
 
-<h1>MG Manisha Glow Ayurvedic</h1>
-<h2>Premium Home-Made Ayurvedic Products</h2>
+<h1>🌿 MG Manisha Glow Ayurvedic</h1>
+<h2>✨ Premium Home-Made Ayurvedic Products</h2>
 
 <!-- SOAP SECTION -->
 <h2>🧼 Soap Collection (₹50 Each)</h2>
 
 <div class="products">
 
-    <div class="card"><h3>Neem Soap</h3><input type="number" id="Neem" min="0" placeholder="Quantity" oninput="calcTotal()"></div>
-    <div class="card"><h3>Tulasi Soap</h3><input type="number" id="Tulasi" min="0" placeholder="Quantity" oninput="calcTotal()"></div>
-    <div class="card"><h3>Aloe Vera Soap</h3><input type="number" id="Aloe" min="0" placeholder="Quantity" oninput="calcTotal()"></div>
-    <div class="card"><h3>Goat Milk Soap</h3><input type="number" id="Goat" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Charcoal Soap</h3><input type="number" id="Charcoal" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Turmeric Soap</h3><input type="number" id="Turmeric" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Rice Potato Soap</h3><input type="number" id="Rice" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Bheem Sen Kapur Alum Soap</h3><input type="number" id="Bheem" min="0" oninput="calcTotal()"></div>
+    <div class="card"><h3>🍃 Neem Soap</h3><input type="number" id="Neem" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>🌿 Tulasi Soap</h3><input type="number" id="Tulasi" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>🍀 Aloe Vera Soap</h3><input type="number" id="Aloe" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>🥛 Goat Milk Soap</h3><input type="number" id="Goat" min="0"></div>
+    <div class="card"><h3>🖤 Charcoal Soap</h3><input type="number" id="Charcoal" min="0"></div>
+    <div class="card"><h3>✨ Turmeric Soap</h3><input type="number" id="Turmeric" min="0"></div>
+    <div class="card"><h3>🍚 Rice Potato Soap</h3><input type="number" id="Rice" min="0"></div>
+    <div class="card"><h3>🧪 Bheem Sen Kapur Soap</h3><input type="number" id="Bheem" min="0"></div>
 
 </div>
 
 <!-- FACE PACK SECTION -->
-<h2>🌿 Face Pack Collection (₹30 Each)</h2>
+<h2>🌸 Face Pack Collection (₹30 Each)</h2>
 
 <div class="facepack">
-    <div class="card"><h3>Neem Leaf Powder Face Pack</h3><input type="number" id="NFP" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Moisturizer Face Pack</h3><input type="number" id="MFP" min="0" oninput="calcTotal()"></div>
+    <div class="card"><h3>🍃 Neem Leaf Powder</h3><input type="number" id="NFP" min="0"></div>
+    <div class="card"><h3>💧 Moisturizer Pack</h3><input type="number" id="MFP" min="0"></div>
 </div>
 
 <!-- ORDER FORM -->
 <div class="order-box">
+
 <h2 style="text-align:center;">📝 Customer Details</h2>
 
-<input type="text" id="custName" placeholder="Your Name">
-<input type="text" id="custPhone" placeholder="Phone Number">
-<textarea id="custAddr" placeholder="Full Address"></textarea>
+<input type="text" id="custName" placeholder="👤 Your Name">
+<input type="text" id="custPhone" placeholder="📞 Phone Number">
+<textarea id="custAddr" placeholder="🏠 Full Address"></textarea>
 
-<input type="text" id="totalAmount" placeholder="Total Amount" readonly>
+<input type="text" id="totalAmount" placeholder="💵 Total Amount" readonly>
 
-<button class="btn" onclick="placeOrder()">WhatsApp Order भेजें</button>
+<button class="btn" onclick="placeOrder()">📩 WhatsApp Order भेजें</button>
+
 </div>
 
-<!-- Company Details -->
+<!-- COMPANY DETAILS -->
 <div class="company-details">
-    <p><b>Contact Name:</b> MG Manisha Glow Ayurvedic</p>
-    <p><b>Mobile Number:</b> 8888942084</p>
-    <p><b>WhatsApp Number:</b> 8888942084</p>
-    <p><b>Address:</b> At Post Rawande, Tal Kopargaon, Dist Ahilyanagar - 423601</p>
-    <p><b>Email:</b> mgayurvedicc@gmail.com</p>
-    <p><b>Instagram:</b> @mg_manisha_glow_Ayurvedic_</p>
-    <p><b>Website:</b> https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/</p>
+    <p><b>🏢 Contact Name:</b> MG Manisha Glow Ayurvedic</p>
+    <p><b>📞 Mobile:</b> 8888942084</p>
+    <p><b>💬 WhatsApp:</b> 8888942084</p>
+    <p><b>📍 Address:</b> Rawande, Kopargaon, Ahilyanagar 423601</p>
+    <p><b>📧 Email:</b> mgayurvedicc@gmail.com</p>
+    <p><b>📸 Instagram:</b> @mg_manisha_glow_Ayurvedic_</p>
+    <p><b>🌐 Website:</b> https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/</p>
 </div>
 
 <img src="main-logo.jpg" class="bottom-logo">
 
 <footer>
-© <span id="year"></span> MG Manisha Glow Ayurvedic
+© <span id="year"></span> MG Manisha Glow Ayurvedic 🌿
 </footer>
 
 </div>
@@ -199,9 +201,8 @@
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* AUTO TOTAL CALCULATION */
+/* AUTO TOTAL PRICE */
 function calcTotal() {
-
     let total =
         (Neem.value * 50) +
         (Tulasi.value * 50) +
@@ -217,7 +218,12 @@ function calcTotal() {
     document.getElementById("totalAmount").value = total;
 }
 
-/* SEND WHATSAPP ORDER */
+/* AUTO CALCULATE WHEN EDIT */
+document.querySelectorAll("input[type='number']").forEach(input=>{
+    input.addEventListener("input", calcTotal);
+});
+
+/* SEND ORDER */
 function placeOrder() {
 
     let name = custName.value;
@@ -226,14 +232,14 @@ function placeOrder() {
     let total = totalAmount.value;
 
     if (!name || !phone || !addr) {
-        alert("कृपया Name, Phone और Address भरें!");
+        alert("❗ कृपया Name, Phone और Address भरें!");
         return;
     }
 
     let msg =
-`🛒 *New Order*
---------------------
-*Quantities:*
+`🧾 *New Order Received*
+----------------------------------
+🧼 *Soap Quantities:*
 Neem: ${Neem.value}
 Tulasi: ${Tulasi.value}
 Aloe Vera: ${Aloe.value}
@@ -243,17 +249,23 @@ Turmeric: ${Turmeric.value}
 Rice Potato: ${Rice.value}
 Bheem Sen: ${Bheem.value}
 
-Neem Face Pack: ${NFP.value}
-Moisturizer Pack: ${MFP.value}
+🌸 *Face Pack:*
+Neem Leaf: ${NFP.value}
+Moisturizer: ${MFP.value}
 
---------------------
+----------------------------------
 💵 *Total:* ₹${total}
 
 👤 *Name:* ${name}
 📞 *Phone:* ${phone}
-🏠 *Address:* ${addr}
+🏠 *Address:*  
+${addr}
 
-धन्यवाद 🙏`;
+----------------------------------
+🙏 *धन्यवाद आम्हाला Order दिल्या बद्दल!*  
+✨ नक्कीच तुम्हाला आमचा Product आवडेल व फायदा होईल  
+📦 आम्ही लवकरात लवकर तुमची Order तुमच्या पर्यंत पोहोचवू  
+🙏 धन्यवाद 🙏`;
 
     window.open(`https://wa.me/918888942084?text=${encodeURIComponent(msg)}`);
 }
