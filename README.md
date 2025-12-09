@@ -22,7 +22,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('main-logo.jpg'); 
+        background-image: url('main-logo.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: 520px;
@@ -71,32 +71,42 @@
         border: 1px solid #aaa;
     }
 
+    /* 🔥 Smaller Customer Form Box */
     .order-box {
         background: rgba(255,255,255,0.95);
-        padding: 20px;
+        padding: 15px;
         border-radius: 12px;
-        margin-top: 30px;
+        margin-top: 25px;
+        width: 100%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
         box-shadow: 0 6px 18px rgba(0,0,0,0.10);
     }
 
     .order-box input, .order-box textarea {
         width: 100%;
-        padding: 10px;
-        margin-top: 10px;
+        padding: 8px;
+        margin-top: 8px;
         border-radius: 6px;
         border: 1px solid #aaa;
+        font-size: 14px;
+    }
+
+    .order-box textarea {
+        height: 60px; /* Smaller height */
     }
 
     .btn {
         background: #6b8e23;
         color: white;
-        padding: 12px;
+        padding: 10px;
         border: none;
         width: 100%;
         margin-top: 12px;
         border-radius: 6px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 15px;
     }
 
     footer {
@@ -104,6 +114,21 @@
         margin-top: 40px;
         padding-bottom: 20px;
         color: #666;
+    }
+
+    /* Company Details Section */
+    .company-details {
+        text-align: center;
+        margin-top: 35px;
+        background: rgba(255,255,255,0.90);
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .company-details p {
+        margin: 6px 0;
+        font-size: 15px;
     }
 </style>
 </head>
@@ -125,27 +150,27 @@
     <div class="card"><h3>Neem Soap</h3><input type="number" id="Neem" min="0" placeholder="Quantity"></div>
     <div class="card"><h3>Tulasi Soap</h3><input type="number" id="Tulasi" min="0" placeholder="Quantity"></div>
     <div class="card"><h3>Aloe Vera Soap</h3><input type="number" id="Aloe" min="0" placeholder="Quantity"></div>
-    <div class="card"><h3>Goat Milk Soap</h3><input type="number" id="Goat" min="0" placeholder="Quantity"></div>
-    <div class="card"><h3>Charcoal Soap</h3><input type="number" id="Charcoal" min="0" placeholder="Quantity"></div>
-    <div class="card"><h3>Turmeric Soap</h3><input type="number" id="Turmeric" min="0" placeholder="Quantity"></div>
-    <div class="card"><h3>Rice Potato Soap</h3><input type="number" id="Rice" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>Goat Milk Soap</h3><input type="number" id="Goat" min="0"></div>
+    <div class="card"><h3>Charcoal Soap</h3><input type="number" id="Charcoal" min="0"></div>
+    <div class="card"><h3>Turmeric Soap</h3><input type="number" id="Turmeric" min="0"></div>
+    <div class="card"><h3>Rice Potato Soap</h3><input type="number" id="Rice" min="0"></div>
     <div class="card"><h3>Bheem Sen Kapur Alum Soap</h3><input type="number" id="Bheem" min="0"></div>
 
 </div>
 
-<!-- FACE PACK -->
+<!-- FACE PACK SECTION -->
 <h2>🌿 Face Pack Collection (₹30 Each)</h2>
 
 <div class="facepack">
 
-    <div class="card"><h3>Neem Leaf Powder Face Pack</h3><input type="number" id="NFP" min="0" placeholder="Quantity"></div>
-    <div class="card"><h3>Moisturizer Face Pack</h3><input type="number" id="MFP" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>Neem Leaf Powder Face Pack</h3><input type="number" id="NFP" min="0"></div>
+    <div class="card"><h3>Moisturizer Face Pack</h3><input type="number" id="MFP" min="0"></div>
 
 </div>
 
 <!-- ORDER FORM -->
 <div class="order-box">
-<h2>📝 Customer Details</h2>
+<h2 style="text-align:center;">📝 Customer Details</h2>
 
 <input type="text" id="custName" placeholder="Your Name">
 <input type="text" id="custPhone" placeholder="Phone Number">
@@ -155,6 +180,17 @@
 
 <button class="btn" onclick="calcTotal()">Total Calculate करें</button>
 <button class="btn" onclick="placeOrder()">WhatsApp Order भेजें</button>
+</div>
+
+<!-- Company Details -->
+<div class="company-details">
+    <p><b>Contact Name:</b> MG Manisha Glow Ayurvedic</p>
+    <p><b>Mobile Number:</b> 8888942084</p>
+    <p><b>WhatsApp Number:</b> 8888942084</p>
+    <p><b>Address:</b> At Post Rawande, Tal Kopargaon, Dist Ahilyanagar - 423601</p>
+    <p><b>Email:</b> mgayurvedicc@gmail.com</p>
+    <p><b>Instagram:</b> @mg_manisha_glow_Ayurvedic_</p>
+    <p><b>Website:</b> https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/</p>
 </div>
 
 <img src="main-logo.jpg" class="bottom-logo">
