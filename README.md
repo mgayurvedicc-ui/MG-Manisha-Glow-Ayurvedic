@@ -152,7 +152,9 @@
     <div class="card"><h3>🖤 Charcoal Soap</h3><input type="number" id="Charcoal" min="0"></div>
     <div class="card"><h3>✨ Turmeric Soap</h3><input type="number" id="Turmeric" min="0"></div>
     <div class="card"><h3>🍚 Rice Potato Soap</h3><input type="number" id="Rice" min="0"></div>
-    <div class="card"><h3> Bheem Sen Kapur Soap</h3><input type="number" id="Bheem" min="0"></div>
+
+    <!-- ❌ Emoji removed ONLY from this one -->
+    <div class="card"><h3>Bheem Sen Kapur Soap</h3><input type="number" id="Bheem" min="0"></div>
 
 </div>
 
@@ -218,7 +220,7 @@ function calcTotal() {
     document.getElementById("totalAmount").value = total;
 }
 
-/* AUTO CALCULATE ON INPUT */
+/* AUTO CALCULATE WHEN USER TYPES */
 document.querySelectorAll("input[type='number']").forEach(input=>{
     input.addEventListener("input", calcTotal);
 });
@@ -247,7 +249,7 @@ function placeOrder() {
 🖤 Charcoal: ${Charcoal.value}  
 ✨ Turmeric: ${Turmeric.value}  
 🍚 Rice Potato: ${Rice.value}  
- Bheem Sen: ${Bheem.value}  
+Bheem Sen Kapur: ${Bheem.value}  
 
 🌸 *Face Pack:*  
 🍃 Neem Leaf Pack: ${NFP.value}  
