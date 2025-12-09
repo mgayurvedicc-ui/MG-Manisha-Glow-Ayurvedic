@@ -154,4 +154,39 @@
 <div class="contact-box">
     <p><strong>Contact Name:</strong> MG Manisha Glow Ayurvedic</p>
     <p><strong>Mobile Number:</strong> 8888942084</p>
-    <p><strong>WhatsApp Number:</strong> 888
+    <p><strong>WhatsApp Number:</strong> 8888942084</p>
+    <p><strong>Address:</strong> At Post Rawande, Tal Kopargaon, Dist Ahilyanagar 423601</p>
+    <p><strong>Email:</strong> mgayurvedicc@gmail.com</p>
+    <p><strong>Instagram:</strong> @mg_manisha_glow_Ayurvedic_</p>
+    <p><strong>Website:</strong> https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/</p>
+</div>
+
+<!-- 🔻 BOTTOM LOGO -->
+<img src="main logo.jpg" class="bottom-logo" alt="MG Logo">
+
+<footer>
+    © <span id="year"></span> MG Manisha Glow Ayurvedic
+</footer>
+
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const wa = "918888942084";
+
+/* SOAP ORDER ₹50 */
+function orderSoap(product){
+    const msg = `Hello, mujhe ${product} (₹50) order karna hai.`;
+    window.open(`https://wa.me/${wa}?text=${encodeURIComponent(msg)}`, "_blank");
+}
+
+/* FACE PACK ₹30 */
+function orderFace(product){
+    const msg = `Hello, mujhe ${product} (₹30) order karna hai.`;
+    window.open(`https://wa.me/${wa}?text=${encodeURIComponent(msg)}`, "_blank");
+}
+</script>
+
+</body>
+</html>
