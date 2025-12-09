@@ -71,7 +71,6 @@
         border: 1px solid #aaa;
     }
 
-    /* 🔥 Smaller Customer Form Box */
     .order-box {
         background: rgba(255,255,255,0.95);
         padding: 15px;
@@ -94,7 +93,7 @@
     }
 
     .order-box textarea {
-        height: 60px; /* Smaller height */
+        height: 60px;
     }
 
     .btn {
@@ -109,14 +108,6 @@
         font-size: 15px;
     }
 
-    footer {
-        text-align: center;
-        margin-top: 40px;
-        padding-bottom: 20px;
-        color: #666;
-    }
-
-    /* Company Details Section */
     .company-details {
         text-align: center;
         margin-top: 35px;
@@ -129,6 +120,13 @@
     .company-details p {
         margin: 6px 0;
         font-size: 15px;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        padding-bottom: 20px;
+        color: #666;
     }
 </style>
 </head>
@@ -147,14 +145,14 @@
 
 <div class="products">
 
-    <div class="card"><h3>Neem Soap</h3><input type="number" id="Neem" min="0" placeholder="Quantity"></div>
-    <div class="card"><h3>Tulasi Soap</h3><input type="number" id="Tulasi" min="0" placeholder="Quantity"></div>
-    <div class="card"><h3>Aloe Vera Soap</h3><input type="number" id="Aloe" min="0" placeholder="Quantity"></div>
-    <div class="card"><h3>Goat Milk Soap</h3><input type="number" id="Goat" min="0"></div>
-    <div class="card"><h3>Charcoal Soap</h3><input type="number" id="Charcoal" min="0"></div>
-    <div class="card"><h3>Turmeric Soap</h3><input type="number" id="Turmeric" min="0"></div>
-    <div class="card"><h3>Rice Potato Soap</h3><input type="number" id="Rice" min="0"></div>
-    <div class="card"><h3>Bheem Sen Kapur Alum Soap</h3><input type="number" id="Bheem" min="0"></div>
+    <div class="card"><h3>Neem Soap</h3><input type="number" id="Neem" min="0" placeholder="Quantity" oninput="calcTotal()"></div>
+    <div class="card"><h3>Tulasi Soap</h3><input type="number" id="Tulasi" min="0" placeholder="Quantity" oninput="calcTotal()"></div>
+    <div class="card"><h3>Aloe Vera Soap</h3><input type="number" id="Aloe" min="0" placeholder="Quantity" oninput="calcTotal()"></div>
+    <div class="card"><h3>Goat Milk Soap</h3><input type="number" id="Goat" min="0" oninput="calcTotal()"></div>
+    <div class="card"><h3>Charcoal Soap</h3><input type="number" id="Charcoal" min="0" oninput="calcTotal()"></div>
+    <div class="card"><h3>Turmeric Soap</h3><input type="number" id="Turmeric" min="0" oninput="calcTotal()"></div>
+    <div class="card"><h3>Rice Potato Soap</h3><input type="number" id="Rice" min="0" oninput="calcTotal()"></div>
+    <div class="card"><h3>Bheem Sen Kapur Alum Soap</h3><input type="number" id="Bheem" min="0" oninput="calcTotal()"></div>
 
 </div>
 
@@ -162,10 +160,8 @@
 <h2>🌿 Face Pack Collection (₹30 Each)</h2>
 
 <div class="facepack">
-
-    <div class="card"><h3>Neem Leaf Powder Face Pack</h3><input type="number" id="NFP" min="0"></div>
-    <div class="card"><h3>Moisturizer Face Pack</h3><input type="number" id="MFP" min="0"></div>
-
+    <div class="card"><h3>Neem Leaf Powder Face Pack</h3><input type="number" id="NFP" min="0" oninput="calcTotal()"></div>
+    <div class="card"><h3>Moisturizer Face Pack</h3><input type="number" id="MFP" min="0" oninput="calcTotal()"></div>
 </div>
 
 <!-- ORDER FORM -->
@@ -178,7 +174,6 @@
 
 <input type="text" id="totalAmount" placeholder="Total Amount" readonly>
 
-<button class="btn" onclick="calcTotal()">Total Calculate करें</button>
 <button class="btn" onclick="placeOrder()">WhatsApp Order भेजें</button>
 </div>
 
@@ -204,7 +199,7 @@
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* TOTAL PRICE CALCULATOR */
+/* AUTO TOTAL CALCULATION */
 function calcTotal() {
 
     let total =
@@ -236,7 +231,7 @@ function placeOrder() {
     }
 
     let msg =
-`🛒 *New Order*  
+`🛒 *New Order*
 --------------------
 *Quantities:*
 Neem: ${Neem.value}
@@ -256,8 +251,7 @@ Moisturizer Pack: ${MFP.value}
 
 👤 *Name:* ${name}
 📞 *Phone:* ${phone}
-🏠 *Address:*  
-${addr}
+🏠 *Address:* ${addr}
 
 धन्यवाद 🙏`;
 
