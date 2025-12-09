@@ -218,7 +218,7 @@ function calcTotal() {
     document.getElementById("totalAmount").value = total;
 }
 
-/* AUTO CALCULATE WHEN EDIT */
+/* AUTO CALCULATE */
 document.querySelectorAll("input[type='number']").forEach(input=>{
     input.addEventListener("input", calcTotal);
 });
@@ -237,35 +237,35 @@ function placeOrder() {
     }
 
     let msg =
-`🧾 *New Order Received*
-----------------------------------
-🧼 *Soap Quantities:*
-Neem: ${Neem.value}
-Tulasi: ${Tulasi.value}
-Aloe Vera: ${Aloe.value}
-Goat Milk: ${Goat.value}
-Charcoal: ${Charcoal.value}
-Turmeric: ${Turmeric.value}
-Rice Potato: ${Rice.value}
-Bheem Sen: ${Bheem.value}
+`🧾 *New Order Received*  
+----------------------------------  
+🧼 *Soap Quantities:*  
+🍃 Neem: ${Neem.value}  
+🌿 Tulasi: ${Tulasi.value}  
+🍀 Aloe Vera: ${Aloe.value}  
+🥛 Goat Milk: ${Goat.value}  
+🖤 Charcoal: ${Charcoal.value}  
+✨ Turmeric: ${Turmeric.value}  
+🍚 Rice Potato: ${Rice.value}  
+ Bheem Sen: ${Bheem.value}  
 
-🌸 *Face Pack:*
-Neem Leaf: ${NFP.value}
-Moisturizer: ${MFP.value}
+🌸 *Face Pack:*  
+🍃 Neem Leaf Pack: ${NFP.value}  
+💧 Moisturizer Pack: ${MFP.value}  
 
-----------------------------------
-💵 *Total:* ₹${total}
+----------------------------------  
+💵 *Total Amount:* ₹${total}  
 
-👤 *Name:* ${name}
-📞 *Phone:* ${phone}
+👤 *Customer Name:* ${name}  
+📞 *Phone:* ${phone}  
 🏠 *Address:*  
-${addr}
+${addr}  
 
-----------------------------------
+----------------------------------  
 🙏 *धन्यवाद आम्हाला Order दिल्या बद्दल!*  
-✨ नक्कीच तुम्हाला आमचा Product आवडेल व फायदा होईल  
+🌿 नक्कीच तुम्हाला आमचा Product आवडेल व फायदा होईल  
 📦 आम्ही लवकरात लवकर तुमची Order तुमच्या पर्यंत पोहोचवू  
-🙏 धन्यवाद 🙏`;
+💚 धन्यवाद 🙏🙏`;
 
     window.open(`https://wa.me/918888942084?text=${encodeURIComponent(msg)}`);
 }
