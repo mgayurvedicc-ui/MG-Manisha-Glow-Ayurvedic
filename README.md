@@ -71,6 +71,7 @@
         border: 1px solid #aaa;
     }
 
+    /* 🔥 Smaller Customer Form Box */
     .order-box {
         background: rgba(255,255,255,0.95);
         padding: 15px;
@@ -93,7 +94,7 @@
     }
 
     .order-box textarea {
-        height: 60px;
+        height: 60px; /* Smaller height */
     }
 
     .btn {
@@ -108,6 +109,14 @@
         font-size: 15px;
     }
 
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        padding-bottom: 20px;
+        color: #666;
+    }
+
+    /* Company Details Section */
     .company-details {
         text-align: center;
         margin-top: 35px;
@@ -120,13 +129,6 @@
     .company-details p {
         margin: 6px 0;
         font-size: 15px;
-    }
-
-    footer {
-        text-align: center;
-        margin-top: 40px;
-        padding-bottom: 20px;
-        color: #666;
     }
 </style>
 </head>
@@ -144,22 +146,26 @@
 <h2>🧼 Soap Collection (₹50 Each)</h2>
 
 <div class="products">
-    <div class="card"><h3>Neem Soap</h3><input type="number" id="Neem" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Tulasi Soap</h3><input type="number" id="Tulasi" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Aloe Vera Soap</h3><input type="number" id="Aloe" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Goat Milk Soap</h3><input type="number" id="Goat" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Charcoal Soap</h3><input type="number" id="Charcoal" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Turmeric Soap</h3><input type="number" id="Turmeric" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Rice Potato Soap</h3><input type="number" id="Rice" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Bheem Sen Kapur Alum Soap</h3><input type="number" id="Bheem" min="0" oninput="calcTotal()"></div>
+
+    <div class="card"><h3>Neem Soap</h3><input type="number" id="Neem" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>Tulasi Soap</h3><input type="number" id="Tulasi" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>Aloe Vera Soap</h3><input type="number" id="Aloe" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>Goat Milk Soap</h3><input type="number" id="Goat" min="0"></div>
+    <div class="card"><h3>Charcoal Soap</h3><input type="number" id="Charcoal" min="0"></div>
+    <div class="card"><h3>Turmeric Soap</h3><input type="number" id="Turmeric" min="0"></div>
+    <div class="card"><h3>Rice Potato Soap</h3><input type="number" id="Rice" min="0"></div>
+    <div class="card"><h3>Bheem Sen Kapur Alum Soap</h3><input type="number" id="Bheem" min="0"></div>
+
 </div>
 
 <!-- FACE PACK SECTION -->
 <h2>🌿 Face Pack Collection (₹30 Each)</h2>
 
 <div class="facepack">
-    <div class="card"><h3>Neem Leaf Powder Face Pack</h3><input type="number" id="NFP" min="0" oninput="calcTotal()"></div>
-    <div class="card"><h3>Moisturizer Face Pack</h3><input type="number" id="MFP" min="0" oninput="calcTotal()"></div>
+
+    <div class="card"><h3>Neem Leaf Powder Face Pack</h3><input type="number" id="NFP" min="0"></div>
+    <div class="card"><h3>Moisturizer Face Pack</h3><input type="number" id="MFP" min="0"></div>
+
 </div>
 
 <!-- ORDER FORM -->
@@ -172,14 +178,15 @@
 
 <input type="text" id="totalAmount" placeholder="Total Amount" readonly>
 
+<button class="btn" onclick="calcTotal()">Total Calculate करें</button>
 <button class="btn" onclick="placeOrder()">WhatsApp Order भेजें</button>
 </div>
 
-<!-- COMPANY DETAILS -->
+<!-- Company Details -->
 <div class="company-details">
     <p><b>Contact Name:</b> MG Manisha Glow Ayurvedic</p>
-    <p><b>Mobile:</b> 8888942084</p>
-    <p><b>WhatsApp:</b> 8888942084</p>
+    <p><b>Mobile Number:</b> 8888942084</p>
+    <p><b>WhatsApp Number:</b> 8888942084</p>
     <p><b>Address:</b> At Post Rawande, Tal Kopargaon, Dist Ahilyanagar - 423601</p>
     <p><b>Email:</b> mgayurvedicc@gmail.com</p>
     <p><b>Instagram:</b> @mg_manisha_glow_Ayurvedic_</p>
@@ -197,13 +204,20 @@
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* AUTO TOTAL CALCULATION */
+/* TOTAL PRICE CALCULATOR */
 function calcTotal() {
+
     let total =
-        (Neem.value * 50) + (Tulasi.value * 50) + (Aloe.value * 50) +
-        (Goat.value * 50) + (Charcoal.value * 50) + (Turmeric.value * 50) +
-        (Rice.value * 50) + (Bheem.value * 50) +
-        (NFP.value * 30) + (MFP.value * 30);
+        (Neem.value * 50) +
+        (Tulasi.value * 50) +
+        (Aloe.value * 50) +
+        (Goat.value * 50) +
+        (Charcoal.value * 50) +
+        (Turmeric.value * 50) +
+        (Rice.value * 50) +
+        (Bheem.value * 50) +
+        (NFP.value * 30) +
+        (MFP.value * 30);
 
     document.getElementById("totalAmount").value = total;
 }
@@ -222,12 +236,12 @@ function placeOrder() {
     }
 
     let msg =
-`🛒 *New Order*
+`🛒 *New Order*  
 --------------------
 *Quantities:*
 Neem: ${Neem.value}
 Tulasi: ${Tulasi.value}
-Aloe: ${Aloe.value}
+Aloe Vera: ${Aloe.value}
 Goat Milk: ${Goat.value}
 Charcoal: ${Charcoal.value}
 Turmeric: ${Turmeric.value}
@@ -242,77 +256,14 @@ Moisturizer Pack: ${MFP.value}
 
 👤 *Name:* ${name}
 📞 *Phone:* ${phone}
-🏠 *Address:* ${addr}
+🏠 *Address:*  
+${addr}
 
---------------------
+धन्यवाद 🙏`;
+
     window.open(`https://wa.me/918888942084?text=${encodeURIComponent(msg)}`);
 }
 </script>
 
 </body>
 </html>
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-
-/* AUTO TOTAL CALCULATION */
-function calcTotal() {
-    let total =
-        (Neem.value * 50) + (Tulasi.value * 50) + (Aloe.value * 50) +
-        (Goat.value * 50) + (Charcoal.value * 50) + (Turmeric.value * 50) +
-        (Rice.value * 50) + (Bheem.value * 50) +
-        (NFP.value * 30) + (MFP.value * 30);
-
-    document.getElementById("totalAmount").value = total;
-}
-
-/* SEND WHATSAPP ORDER + AUTO THANK YOU MESSAGE */
-function placeOrder() {
-
-    let name = custName.value;
-    let phone = custPhone.value;
-    let addr = custAddr.value;
-    let total = totalAmount.value;
-
-    if (!name || !phone || !addr) {
-        alert("कृपया Name, Phone आणि Address भरा!");
-        return;
-    }
-
-    let orderMsg =
-``🛒🛒 *New Order*
---------------------
-*Quantities:*
-Neem: ${Neem.value}
-Tulasi: ${Tulasi.value}
-Aloe: ${Aloe.value}
-Goat Milk: ${Goat.value}
-Charcoal: ${Charcoal.value}
-Turmeric: ${Turmeric.value}
-Rice Potato: ${Rice.value}
-Bheem Sen: ${Bheem.value}
-
-Neem Face Pack: ${NFP.value}
-Moisturizer Pack: ${MFP.value}
-
---------------------
-💵 *Total:* ₹${total}
-
-👤 *Name:* ${name}
-📞 *Phone:* ${phone}
-🏠 *Address:* ${addr}`;
-
-    let thankMsg =
-`धन्यवाद आम्हाला Order दिल्या बद्दल 🙏  
-नक्कीच तुम्हाला आमचा Product आवडेल व तुम्हाला फायदा होईल 🙏  
-लवकरात लवकर तुमची Order तुमच्या पर्यंत पोहचवू  
-धन्यवाद 🙏🙏`;
-
-    // First message = Order
-    window.open(`https://wa.me/918888942084?text=${encodeURIComponent(orderMsg)}`);
-
-    // Second message = Thank You
-    setTimeout(() => {
-        window.open(`https://wa.me/${custPhone.value}?text=${encodeURIComponent(thankMsg)}`);
-    }, 1500);
-}
-</script>
