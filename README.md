@@ -15,7 +15,7 @@
         overflow-x: hidden;
     }
 
-    /* 🔥 Background Logo Watermark (Your uploaded logo used here) */
+    /* 🔥 Background Logo Watermark */
     body::before {
         content: "";
         position: fixed;
@@ -23,11 +23,11 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('/mnt/data/main logo.jpg'); 
+        background-image: url('main logo.jpg'); 
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 520px; /* size bigger for premium look */
-        opacity: 0.14; /* 14% for soft watermark */
+        background-size: 520px;
+        opacity: 0.14;
         z-index: -1;
     }
 
@@ -92,68 +92,68 @@
     <div class="card">
         <h3>Neem Soap</h3>
         <p>Anti-bacterial • Clear Skin</p>
-        <button class="btn" onclick="orderNow('Neem Soap')">Order</button>
+        <button class="btn" onclick="orderNowSoap('Neem Soap')">Order ₹50</button>
     </div>
 
     <div class="card">
         <h3>Tulasi Soap</h3>
         <p>Detox • Fresh Skin</p>
-        <button class="btn" onclick="orderNow('Tulasi Soap')">Order</button>
+        <button class="btn" onclick="orderNowSoap('Tulasi Soap')">Order ₹50</button>
     </div>
 
     <div class="card">
         <h3>Aloe Vera Soap</h3>
-        <p>Moisturizing • Softening</p>
-        <button class="btn" onclick="orderNow('Aloe Vera Soap')">Order</button>
+        <p>Moisturizing • Soft Skin</p>
+        <button class="btn" onclick="orderNowSoap('Aloe Vera Soap')">Order ₹50</button>
     </div>
 
     <div class="card">
         <h3>Goat Milk Soap</h3>
-        <p>Nourishing • Gentle Skin</p>
-        <button class="btn" onclick="orderNow('Goat Milk Soap')">Order</button>
+        <p>Nourishing • Gentle</p>
+        <button class="btn" onclick="orderNowSoap('Goat Milk Soap')">Order ₹50</button>
     </div>
 
     <div class="card">
         <h3>Charcoal Soap</h3>
         <p>Deep Clean • Oil Control</p>
-        <button class="btn" onclick="orderNow('Charcoal Soap')">Order</button>
+        <button class="btn" onclick="orderNowSoap('Charcoal Soap')">Order ₹50</button>
     </div>
 
     <div class="card">
         <h3>Turmeric Soap</h3>
         <p>Glow • Brightening</p>
-        <button class="btn" onclick="orderNow('Turmeric Soap')">Order</button>
+        <button class="btn" onclick="orderNowSoap('Turmeric Soap')">Order ₹50</button>
     </div>
 
     <div class="card">
         <h3>Rice Potato Soap</h3>
         <p>Tan Remove • Soft Skin</p>
-        <button class="btn" onclick="orderNow('Rice Potato Soap')">Order</button>
+        <button class="btn" onclick="orderNowSoap('Rice Potato Soap')">Order ₹50</button>
     </div>
 
     <div class="card">
         <h3>Bheem Sen Kapur Alum (तुरटी) Soap</h3>
         <p>Skin Tightening • Smooth Texture</p>
-        <button class="btn" onclick="orderNow('Bheem Sen Kapur Alum Soap')">Order</button>
+        <button class="btn" onclick="orderNowSoap('Bheem Sen Kapur Alum Soap')">Order ₹50</button>
     </div>
 
 </div>
 
-<!-- FACE PACK -->
-<h2>🌿 Face Pack Collection (₹50 Each)</h2>
+<!-- FACE PACK UPDATED -->
+<h2>🌿 Face Pack Collection (₹30 Each)</h2>
 
 <div class="facepack">
 
     <div class="card">
         <h3>Neem Leaf Powder (Face Pack)</h3>
         <p>Detox • Pimple Control</p>
-        <button class="btn" onclick="orderNow('Neem Leaf Powder Face Pack')">Order</button>
+        <button class="btn" onclick="orderNowFace('Neem Leaf Powder Face Pack')">Order ₹30</button>
     </div>
 
     <div class="card">
         <h3>Moisturizer Face Pack</h3>
         <p>Soft • Hydration • Glow</p>
-        <button class="btn" onclick="orderNow('Moisturizer Face Pack')">Order</button>
+        <button class="btn" onclick="orderNowFace('Moisturizer Face Pack')">Order ₹30</button>
     </div>
 
 </div>
@@ -169,8 +169,15 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const wa = "918888942084";
 
-function orderNow(product){
+/* SOAP ORDER (₹50) */
+function orderNowSoap(product){
     const msg = `Hello, mujhe ${product} (₹50) order karna hai.`;
+    window.open(`https://wa.me/${wa}?text=${encodeURIComponent(msg)}`, "_blank");
+}
+
+/* FACE PACK ORDER (₹30) */
+function orderNowFace(product){
+    const msg = `Hello, mujhe ${product} (₹30) order karna hai.`;
     window.open(`https://wa.me/${wa}?text=${encodeURIComponent(msg)}`, "_blank");
 }
 </script>
