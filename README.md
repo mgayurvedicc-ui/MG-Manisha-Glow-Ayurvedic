@@ -173,7 +173,7 @@
 <input type="text" id="custPhone" placeholder="📞 Phone Number">
 <textarea id="custAddr" placeholder="🏠 Full Address"></textarea>
 
-<input type="text" id="totalAmount" placeholder="💵 Total Amount" readonly>
+<input type="text" id="totalAmount" placeholder="💵 Total Amount (Auto)" readonly>
 
 <button class="btn" onclick="placeOrder()">📩 WhatsApp Order भेजें</button>
 
@@ -218,7 +218,7 @@ function calcTotal() {
     document.getElementById("totalAmount").value = total;
 }
 
-/* AUTO CALCULATE */
+/* AUTO CALCULATE ON INPUT */
 document.querySelectorAll("input[type='number']").forEach(input=>{
     input.addEventListener("input", calcTotal);
 });
@@ -259,9 +259,8 @@ function placeOrder() {
 👤 *Customer Name:* ${name}  
 📞 *Phone:* ${phone}  
 🏠 *Address:*  
-${addr}  
+${addr}`;
 
-----------------------------------  
     window.open(`https://wa.me/918888942084?text=${encodeURIComponent(msg)}`);
 }
 </script>
