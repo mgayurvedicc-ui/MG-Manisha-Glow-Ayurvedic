@@ -28,22 +28,18 @@ body::before {
 
 .container { max-width: 1100px; margin: auto; padding: 20px; }
 h1, h2 { text-align: center; color: #1f3812; }
-
 .products, .facepack {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
 }
-
 .card {
-    background: rgba(255,255,255,0.92);
+    background: rgba(255,255,255,0.90);
     padding: 18px;
     border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
-
-.card input, 
-.card textarea {
+.card input {
     width: 100%;
     padding: 8px;
     margin-top: 6px;
@@ -51,10 +47,26 @@ h1, h2 { text-align: center; color: #1f3812; }
     border: 1px solid #ccc;
 }
 
+.order-box {
+    background: rgba(255,255,255,0.92);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.order-box input, .order-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+}
+
 .btn {
     background: #6b8e23;
     color: white;
-    padding: 10px;
+    padding: 12px;
     width: 100%;
     border: none;
     border-radius: 6px;
@@ -64,12 +76,12 @@ h1, h2 { text-align: center; color: #1f3812; }
 
 .top-logo { width: 130px; display: block; margin: 20px auto; }
 .bottom-logo { width: 110px; display: block; margin: 20px auto; }
-
 footer { text-align: center; padding: 20px; color: #777; }
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
 <img src="main-logo.jpg" class="top-logo">
@@ -82,141 +94,100 @@ footer { text-align: center; padding: 20px; color: #777; }
 <h2>🧼 Soap Collection (₹50 Each)</h2>
 <div class="products">
 
-<!-- TEMPLATE FOR EACH PRODUCT -->
 <div class="card">
     <h3>Neem Soap</h3>
-
     <label>Quantity:</label>
-    <input type="number" id="qty-Neem" min="1">
-
-    <label>Your Name:</label>
-    <input type="text" id="name-Neem">
-
-    <label>Your Address:</label>
-    <textarea id="addr-Neem"></textarea>
-
-    <label>Your Phone No:</label>
-    <input type="text" id="phone-Neem">
-
-    <label>Total Amount:</label>
-    <input type="text" id="total-Neem" readonly>
-
-    <button class="btn" onclick="calcTotal('Neem',50)">Total निकालें</button>
-    <button class="btn" onclick="sendOrder('Neem Soap','qty-Neem','name-Neem','addr-Neem','phone-Neem','total-Neem')">Order via WhatsApp</button>
+    <input type="number" id="Neem" min="0" placeholder="0">
 </div>
-
 
 <div class="card">
     <h3>Tulasi Soap</h3>
-
     <label>Quantity:</label>
-    <input type="number" id="qty-Tulasi" min="1">
-
-    <label>Your Name:</label>
-    <input type="text" id="name-Tulasi">
-
-    <label>Your Address:</label>
-    <textarea id="addr-Tulasi"></textarea>
-
-    <label>Your Phone No:</label>
-    <input type="text" id="phone-Tulasi">
-
-    <label>Total Amount:</label>
-    <input type="text" id="total-Tulasi" readonly>
-
-    <button class="btn" onclick="calcTotal('Tulasi',50)">Total निकालें</button>
-    <button class="btn" onclick="sendOrder('Tulasi Soap','qty-Tulasi','name-Tulasi','addr-Tulasi','phone-Tulasi','total-Tulasi')">Order via WhatsApp</button>
+    <input type="number" id="Tulasi" min="0" placeholder="0">
 </div>
-
 
 <div class="card">
     <h3>Aloe Vera Soap</h3>
-
     <label>Quantity:</label>
-    <input type="number" id="qty-Aloe" min="1">
-
-    <label>Your Name:</label>
-    <input type="text" id="name-Aloe">
-
-    <label>Your Address:</label>
-    <textarea id="addr-Aloe"></textarea>
-
-    <label>Your Phone No:</label>
-    <input type="text" id="phone-Aloe">
-
-    <label>Total Amount:</label>
-    <input type="text" id="total-Aloe" readonly>
-
-    <button class="btn" onclick="calcTotal('Aloe',50)">Total निकालें</button>
-    <button class="btn" onclick="sendOrder('Aloe Vera Soap','qty-Aloe','name-Aloe','addr-Aloe','phone-Aloe','total-Aloe')">Order via WhatsApp</button>
+    <input type="number" id="Aloe" min="0" placeholder="0">
 </div>
 
-<!-- इसी तरह बाकी सभी soap products automatically same pattern में add कर दूँगा अगर चाहें तो -->
-
-
+<div class="card">
+    <h3>Goat Milk Soap</h3>
+    <label>Quantity:</label>
+    <input type="number" id="Goat" min="0" placeholder="0">
 </div>
 
+<div class="card">
+    <h3>Charcoal Soap</h3>
+    <label>Quantity:</label>
+    <input type="number" id="Charcoal" min="0" placeholder="0">
+</div>
 
+<div class="card">
+    <h3>Turmeric Soap</h3>
+    <label>Quantity:</label>
+    <input type="number" id="Turmeric" min="0" placeholder="0">
+</div>
+
+<div class="card">
+    <h3>Rice Potato Soap</h3>
+    <label>Quantity:</label>
+    <input type="number" id="Rice" min="0" placeholder="0">
+</div>
+
+<div class="card">
+    <h3>Bheem Sen Kapur Alum Soap</h3>
+    <label>Quantity:</label>
+    <input type="number" id="Bheem" min="0" placeholder="0">
+</div>
+
+</div>
 
 
 <!-- FACE PACK SECTION -->
 <h2>🌿 Face Pack (₹30 Each)</h2>
-
 <div class="facepack">
 
 <div class="card">
     <h3>Neem Leaf Powder Face Pack</h3>
-
     <label>Quantity:</label>
-    <input type="number" id="qty-NFP" min="1">
-
-    <label>Your Name:</label>
-    <input type="text" id="name-NFP">
-
-    <label>Your Address:</label>
-    <textarea id="addr-NFP"></textarea>
-
-    <label>Your Phone No:</label>
-    <input type="text" id="phone-NFP">
-
-    <label>Total Amount:</label>
-    <input type="text" id="total-NFP" readonly>
-
-    <button class="btn" onclick="calcTotal('NFP',30)">Total निकालें</button>
-    <button class="btn" onclick="sendOrder('Neem Leaf Powder Face Pack','qty-NFP','name-NFP','addr-NFP','phone-NFP','total-NFP')">Order via WhatsApp</button>
+    <input type="number" id="NFP" min="0" placeholder="0">
 </div>
-
 
 <div class="card">
     <h3>Moisturizer Face Pack</h3>
-
     <label>Quantity:</label>
-    <input type="number" id="qty-MFP" min="1">
-
-    <label>Your Name:</label>
-    <input type="text" id="name-MFP">
-
-    <label>Your Address:</label>
-    <textarea id="addr-MFP"></textarea>
-
-    <label>Your Phone No:</label>
-    <input type="text" id="phone-MFP">
-
-    <label>Total Amount:</label>
-    <input type="text" id="total-MFP" readonly>
-
-    <button class="btn" onclick="calcTotal('MFP',30)">Total निकालें</button>
-    <button class="btn" onclick="sendOrder('Moisturizer Face Pack','qty-MFP','name-MFP','addr-MFP','phone-MFP','total-MFP')">Order via WhatsApp</button>
+    <input type="number" id="MFP" min="0" placeholder="0">
 </div>
 
+</div>
+
+
+<!-- ORDER FORM -->
+<div class="order-box">
+<h2>📝 Customer Details</h2>
+
+<label>Your Name:</label>
+<input type="text" id="custName">
+
+<label>Phone Number:</label>
+<input type="text" id="custPhone">
+
+<label>Address:</label>
+<textarea id="custAddr"></textarea>
+
+<label>Total Amount:</label>
+<input type="text" id="grandTotal" readonly>
+
+<button class="btn" onclick="calculateGrandTotal()">Total Calculate करें</button>
+<button class="btn" onclick="placeOrder()">WhatsApp Order भेजें</button>
 </div>
 
 
 <img src="main-logo.jpg" class="bottom-logo">
 
-<footer>
-© <span id="year"></span> MG Manisha Glow Ayurvedic
-</footer>
+<footer>© <span id="year"></span> MG Manisha Glow Ayurvedic</footer>
 
 </div>
 
@@ -224,37 +195,65 @@ footer { text-align: center; padding: 20px; color: #777; }
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-function calcTotal(id, price){
-    let qty = document.getElementById("qty-" + id).value;
-    document.getElementById("total-" + id).value = qty * price;
+/* CALCULATE TOTAL */
+function calculateGrandTotal(){
+    let soapPrice = 50;
+    let facePrice = 30;
+
+    let total = 
+      (document.getElementById("Neem").value * soapPrice) +
+      (document.getElementById("Tulasi").value * soapPrice) +
+      (document.getElementById("Aloe").value * soapPrice) +
+      (document.getElementById("Goat").value * soapPrice) +
+      (document.getElementById("Charcoal").value * soapPrice) +
+      (document.getElementById("Turmeric").value * soapPrice) +
+      (document.getElementById("Rice").value * soapPrice) +
+      (document.getElementById("Bheem").value * soapPrice) +
+
+      (document.getElementById("NFP").value * facePrice) +
+      (document.getElementById("MFP").value * facePrice);
+
+    document.getElementById("grandTotal").value = total;
 }
 
-function sendOrder(product, q, n, a, p, t){
-    let qty = document.getElementById(q).value;
-    let name = document.getElementById(n).value;
-    let addr = document.getElementById(a).value;
-    let phone = document.getElementById(p).value;
-    let total = document.getElementById(t).value;
+/* SEND ORDER */
+function placeOrder(){
+    let name = document.getElementById("custName").value;
+    let phone = document.getElementById("custPhone").value;
+    let addr = document.getElementById("custAddr").value;
+    let total = document.getElementById("grandTotal").value;
 
-    if(!qty || !name || !addr || !phone){
-        alert("कृपया सभी details भरें!");
+    if(!name || !phone || !addr){
+        alert("कृपया Name, Phone, Address भरें!");
         return;
     }
 
     let msg = 
 `🛒 *New Order*
 ----------------------
-📦 Product: ${product}
-🔢 Quantity: ${qty}
-💵 Total Amount: ₹${total}
 
-👤 Customer Name: ${name}
-📞 Phone: ${phone}
+*Quantities:*
+Neem Soap: ${Neem.value}
+Tulasi Soap: ${Tulasi.value}
+Aloe Vera Soap: ${Aloe.value}
+Goat Milk Soap: ${Goat.value}
+Charcoal Soap: ${Charcoal.value}
+Turmeric Soap: ${Turmeric.value}
+Rice Potato Soap: ${Rice.value}
+Bheem Alum Soap: ${Bheem.value}
 
-🏠 Address:
+Neem Leaf Face Pack: ${NFP.value}
+Moisturizer Face Pack: ${MFP.value}
+
+----------------------
+💵 *Total Amount:* ₹${total}
+
+👤 *Customer:* ${name}
+📞 *Phone:* ${phone}
+🏠 *Address:* 
 ${addr}
 
-धन्यवाद!`;
+धन्यवाद 🙏`;
 
     window.open(`https://wa.me/918888942084?text=${encodeURIComponent(msg)}`);
 }
