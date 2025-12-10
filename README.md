@@ -3,206 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MG Manisha Glow Ayurvedic</title>
+<title>🌿 MG Manisha Glow Ayurvedic</title>
 
 <style>
-/* -------------------- GLOBAL --------------------- */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    background: #faf7ef;
-    color: #2f3b26;
-}
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #fffdf9;
+        position: relative;
+        overflow-x: hidden;
+    }
 
-/* Soft Herbal Pattern Background */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://i.imgur.com/2O8l6MT.png');
-    opacity: 0.09;
-    z-index: -1;
-}
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('main-logo.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 520px;
+        opacity: 0.13;
+        z-index: -1;
+    }
 
-/* -------------------- HEADER --------------------- */
-.header {
-    background: linear-gradient(to bottom right, #c9e7c3, #f5f0da);
-    padding: 30px;
-    text-align: center;
-    border-bottom: 5px solid #8fbf7a;
-    background-image: url('https://images.unsplash.com/photo-1590393804594-2b51d7c5ee54?auto=format&fit=crop&w=1400&q=60');
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
+    .top-logo, .bottom-logo {
+        display: block;
+        margin: 20px auto;
+    }
 
-.header h1 {
-    font-size: 35px;
-    font-weight: 700;
-    text-shadow: 2px 2px 10px #000;
-}
+    .top-logo { width: 130px; }
+    .bottom-logo { width: 110px; }
 
-.header h2 {
-    font-size: 20px;
-    margin-top: 5px;
-    text-shadow: 2px 2px 8px #000;
-}
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+    }
 
-/* -------------------- PRODUCT GRID --------------------- */
-.section-title {
-    text-align: center;
-    font-size: 28px;
-    margin-top: 30px;
-    color: #3e5d2c;
-}
+    h1, h2 {
+        text-align: center;
+        color: #1f3812;
+    }
 
-.products, .facepack {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
+    .products, .facepack {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+    }
 
-/* Aesthetic Card */
-.card {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 18px;
-    border-radius: 16px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-    transition: 0.3s;
-    border: 1px solid #dfe8d3;
-    backdrop-filter: blur(4px);
-}
+    .card {
+        background: rgba(255,255,255,0.90);
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-}
+    .card input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 8px;
+        border-radius: 6px;
+        border: 1px solid #aaa;
+    }
 
-.card h3 {
-    margin: 5px 0;
-    font-size: 20px;
-    color: #2e4821;
-}
+    .order-box {
+        background: rgba(255,255,255,0.95);
+        padding: 15px;
+        border-radius: 12px;
+        margin-top: 25px;
+        width: 100%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    }
 
-.card input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #a5b99a;
-    margin-top: 10px;
-    font-size: 15px;
-}
+    .order-box input, .order-box textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 8px;
+        border-radius: 6px;
+        border: 1px solid #aaa;
+        font-size: 14px;
+    }
 
-/* -------------------- ORDER FORM --------------------- */
-.order-box {
-    width: 90%;
-    max-width: 600px;
-    margin: 35px auto;
-    padding: 25px;
-    background: rgba(255,255,255,0.97);
-    border-radius: 18px;
-    border: 1px solid #d3dfc6;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.10);
-}
+    .order-box textarea {
+        height: 60px;
+    }
 
-.order-box input, .order-box textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    border-radius: 10px;
-    border: 1px solid #a3b899;
-    font-size: 15px;
-}
+    .btn {
+        background: #6b8e23;
+        color: white;
+        padding: 10px;
+        border: none;
+        width: 100%;
+        margin-top: 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 15px;
+    }
 
-textarea {
-    height: 70px;
-}
+    .company-details {
+        text-align: center;
+        margin-top: 35px;
+        background: rgba(255,255,255,0.90);
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
 
-/* Button */
-.btn {
-    width: 100%;
-    padding: 12px;
-    background: #6f9e58;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    margin-top: 15px;
-    font-size: 17px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+    .company-details p {
+        margin: 6px 0;
+        font-size: 15px;
+    }
 
-.btn:hover {
-    background: #568843;
-}
-
-/* -------------------- COMPANY DETAILS --------------------- */
-.company-details {
-    background: rgba(255,255,255,0.95);
-    width: 90%;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 14px;
-    text-align: center;
-    border: 1px solid #d9e7cd;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.company-details p {
-    margin: 5px 0;
-}
-
-/* -------------------- FOOTER --------------------- */
-footer {
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
-    margin-top: 20px;
-    background: #e6f0e0;
-    border-top: 2px solid #9fbd94;
-}
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        padding-bottom: 20px;
+        color: #666;
+    }
 </style>
 </head>
 
 <body>
 
-<!-- HERO HEADER -->
-<div class="header">
-    <h1>🌿 MG Manisha Glow Ayurvedic</h1>
-    <h2>Premium Home-Made Ayurvedic Products</h2>
-</div>
+<div class="container">
+
+<img src="main-logo.jpg" class="top-logo">
+
+<h1>🌿 MG Manisha Glow Ayurvedic</h1>
+<h2>✨ Premium Home-Made Ayurvedic Products</h2>
 
 <!-- SOAP SECTION -->
-<h2 class="section-title">🧼 Soap Collection (₹50)</h2>
+<h2>🧼 Soap Collection (₹50 Each)</h2>
 
 <div class="products">
 
-    <div class="card"><h3>🍃 Neem Soap</h3><input type="number" id="Neem" min="0"></div>
-    <div class="card"><h3>🌿 Tulasi Soap</h3><input type="number" id="Tulasi" min="0"></div>
-    <div class="card"><h3>🍀 Aloe Vera Soap</h3><input type="number" id="Aloe" min="0"></div>
+    <div class="card"><h3>🍃 Neem Soap</h3><input type="number" id="Neem" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>🌿 Tulasi Soap</h3><input type="number" id="Tulasi" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>🍀 Aloe Vera Soap</h3><input type="number" id="Aloe" min="0" placeholder="Quantity"></div>
     <div class="card"><h3>🥛 Goat Milk Soap</h3><input type="number" id="Goat" min="0"></div>
     <div class="card"><h3>🖤 Charcoal Soap</h3><input type="number" id="Charcoal" min="0"></div>
     <div class="card"><h3>✨ Turmeric Soap</h3><input type="number" id="Turmeric" min="0"></div>
     <div class="card"><h3>🍚 Rice Potato Soap</h3><input type="number" id="Rice" min="0"></div>
+
+    <!-- ❌ Emoji removed ONLY from this one -->
     <div class="card"><h3>Bheem Sen Kapur Soap</h3><input type="number" id="Bheem" min="0"></div>
 
 </div>
 
 <!-- FACE PACK SECTION -->
-<h2 class="section-title">🌸 Face Pack Collection (₹30)</h2>
+<h2>🌸 Face Pack Collection (₹30 Each)</h2>
 
 <div class="facepack">
-    <div class="card"><h3>🍃 Neem Leaf Powder Pack</h3><input type="number" id="NFP" min="0"></div>
-    <div class="card"><h3>💧 Moisturizer Pack</h3><input type="number" id="MFP" min="0"></div>
+    <div class="card"><h3>🍃 Neem Leaf Powder</h3><input type="number" id="NFP" min="0"></div>
+    <div class="card"><h3>💧 Moisturizer Cream</h3><input type="number" id="MFP" min="0"></div>
 </div>
 
 <!-- ORDER FORM -->
 <div class="order-box">
+
 <h2 style="text-align:center;">📝 Customer Details</h2>
 
 <input type="text" id="custName" placeholder="👤 Your Name">
@@ -212,22 +178,27 @@ footer {
 <input type="text" id="totalAmount" placeholder="💵 Total Amount (Auto)" readonly>
 
 <button class="btn" onclick="placeOrder()">📩 WhatsApp Order भेजें</button>
+
 </div>
 
 <!-- COMPANY DETAILS -->
 <div class="company-details">
-    <p><b>Contact Name:</b> MG Manisha Glow Ayurvedic</p>
-    <p><b>Mobile:</b> 8888942084</p>
-    <p><b>WhatsApp:</b> 8888942084</p>
-    <p><b>Address:</b> Rawande, Kopargaon, Ahilyanagar 423601</p>
-    <p><b>Email:</b> mgayurvedicc@gmail.com</p>
-    <p><b>Instagram:</b> @mg_manisha_glow_Ayurvedic_</p>
-    <p><b>Website:</b> https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/</p>
+    <p><b>🏢 Contact Name:</b> MG Manisha Glow Ayurvedic</p>
+    <p><b>📞 Mobile:</b> 8888942084</p>
+    <p><b>💬 WhatsApp:</b> 8888942084</p>
+    <p><b>📍 Address:</b> Rawande, Kopargaon, Ahilyanagar 423601</p>
+    <p><b>📧 Email:</b> mgayurvedicc@gmail.com</p>
+    <p><b>📸 Instagram:</b> @mg_manisha_glow_Ayurvedic_</p>
+    <p><b>🌐 Website:</b> https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/</p>
 </div>
+
+<img src="main-logo.jpg" class="bottom-logo">
 
 <footer>
 © <span id="year"></span> MG Manisha Glow Ayurvedic 🌿
 </footer>
+
+</div>
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -249,7 +220,7 @@ function calcTotal() {
     document.getElementById("totalAmount").value = total;
 }
 
-/* AUTO CALCULATE EVERY TIME USER TYPES */
+/* AUTO CALCULATE WHEN USER TYPES */
 document.querySelectorAll("input[type='number']").forEach(input=>{
     input.addEventListener("input", calcTotal);
 });
@@ -263,7 +234,7 @@ function placeOrder() {
     let total = totalAmount.value;
 
     if (!name || !phone || !addr) {
-        alert("कृपया Name, Phone और Address भरें!");
+        alert("❗ कृपया Name, Phone और Address भरें!");
         return;
     }
 
@@ -282,7 +253,7 @@ Bheem Sen Kapur: ${Bheem.value}
 
 🌸 *Face Pack:*  
 🍃 Neem Leaf Pack: ${NFP.value}  
-💧 Moisturizer Pack: ${MFP.value}  
+💧 Moisturizer Cream: ${MFP.value}  
 
 ----------------------------------  
 💵 *Total Amount:* ₹${total}  
