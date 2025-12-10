@@ -10,7 +10,7 @@
 /* FONT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* ROOT COLORS (LIGHT + DARK MODE) */
+/* ROOT COLORS */
 :root {
   --bg: #faf7ef;
   --text: #2f3b26;
@@ -29,7 +29,7 @@ body.dark {
   --accent2: #5ebf69;
 }
 
-/* GLOBAL */
+/* BODY */
 body {
     margin: 0;
     padding: 0;
@@ -39,21 +39,20 @@ body {
     transition: 0.4s;
 }
 
-/* BACKGROUND LOGO */
+/* BACKGROUND LOGO WATERMARK */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background-image: url('main-logo.jpg');
+    background-image: url('main-logo.jpg'); /* ← आपका दिया हुआ LOGO */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 500px;
-    opacity: 0.08;
+    background-size: 650px;
+    opacity: 0.11;  /* Light watermark effect */
     z-index: -1;
-    transition: 0.5s;
 }
 
-/* DARK MODE TOGGLE */
+/* DARK MODE BUTTON */
 .toggle-btn {
     position: fixed;
     top: 15px;
@@ -78,36 +77,29 @@ body::before {
     text-align: center;
     color: white;
     border-radius: 0 0 18px 18px;
-    animation: fadeDown 1.3s ease;
 }
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.header h1 { font-size: 36px; margin: 0; font-weight: 700; text-shadow: 2px 2px 12px black; }
-.header h2 { margin: 8px 0 0; font-size: 20px; }
+.header h1 { font-size: 36px; font-weight: 700; }
+.header h2 { margin-top: 8px; font-size: 20px; }
+
+/* CONTAINER */
+.container { max-width: 1150px; margin: auto; padding: 20px; }
+
+.section-title { text-align:center; font-size:24px; color:var(--accent2); }
 
 /* GRID */
-.container { max-width: 1150px; margin: auto; padding: 20px; }
-.section-title { text-align:center; font-size:24px; margin: 15px 0 10px; color: var(--accent2); }
-
-/* PRODUCT CARDS */
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:20px;
 }
+
+/* CARD */
 .card {
   background: var(--card);
   padding: 16px;
   border-radius: 14px;
   box-shadow: 0 10px 25px var(--shadow);
   transition: .3s;
-  animation: fadeUp .8s ease;
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 .card:hover { transform: translateY(-6px); }
 
@@ -123,7 +115,6 @@ body::before {
 .card input {
   width: 100%;
   padding: 10px;
-  margin-top: 8px;
   border-radius: 8px;
   border: 1px solid #ccc;
   background: var(--bg);
@@ -139,13 +130,11 @@ body::before {
   width: 100%;
   max-width: 720px;
   box-shadow: 0 10px 25px var(--shadow);
-  animation: fadeUp .9s ease;
 }
 
 .order-box input, .order-box textarea {
   width: 100%;
   padding: 10px;
-  margin-top: 8px;
   border-radius: 10px;
   border: 1px solid #ccc;
   background: var(--bg);
@@ -154,13 +143,6 @@ body::before {
 
 textarea { height: 65px; }
 
-.total {
-  font-size: 22px;
-  font-weight: bold;
-  color: var(--accent2);
-}
-
-/* BUTTON */
 .btn {
   width: 100%;
   background: var(--accent);
@@ -172,29 +154,23 @@ textarea { height: 65px; }
   font-size: 17px;
   cursor: pointer;
 }
-.btn:hover {
-  background: var(--accent2);
-  transform: scale(1.02);
-}
+.btn:hover { background: var(--accent2); }
 
-/* COMPANY DETAILS BOX */
+/* COMPANY DETAILS */
 .company-full {
   margin-top: 40px;
   padding: 25px;
   border-radius: 14px;
   background: var(--card);
   box-shadow: 0 10px 25px var(--shadow);
-  font-size: 15px;
-  line-height: 1.7;
 }
-.company-full b { color: var(--accent2); font-size: 16px; }
+.company-full b { color: var(--accent2); }
 
 /* FOOTER */
 .footer {
   text-align:center;
+  padding: 15px;
   color: var(--accent2);
-  padding: 12px;
-  margin-top: 25px;
 }
 
 </style>
@@ -202,7 +178,6 @@ textarea { height: 65px; }
 
 <body>
 
-<!-- 🔘 DARK MODE BUTTON -->
 <div class="toggle-btn" onclick="toggleDark()">🌙 Dark / ☀️ Light</div>
 
 <!-- HEADER -->
@@ -213,14 +188,12 @@ textarea { height: 65px; }
 
 <div class="container">
 
-<!-- 🌿 SOAP -->
+<!-- SOAP -->
 <h3 class="section-title">🧼 Soap Collection — ₹50</h3>
 
 <div class="grid">
 
-<!-- SOAPS HERE (same as previous code) — unchanged -->
-<!-- For space, I'm keeping your existing soap + face pack cards exactly same -->
-
+<!-- Soap Cards Same -->
 <div class="card">
 <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1582719478244-ff65d3f7b7a3?auto=format&fit=crop&w=800&q=60')"></div>
 <h3>🍃 Neem Soap</h3>
@@ -271,10 +244,11 @@ textarea { height: 65px; }
 
 </div>
 
-<!-- 🌸 FACE PACK -->
+<!-- FACE PACK -->
 <h3 class="section-title">🌸 Face Pack Collection — ₹30</h3>
 
 <div class="grid">
+
 <div class="card">
 <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1598531371365-6b7f1f6d4c9b?auto=format&fit=crop&w=800&q=60')"></div>
 <h3>🍃 Neem Leaf Powder</h3>
@@ -283,9 +257,10 @@ textarea { height: 65px; }
 
 <div class="card">
 <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1542444459-db8a1b2d7b2a?auto=format&fit=crop&w=800&q=60')"></div>
-<h3>💧 Moisturizer Pack</h3>
-<input type="number" data-price="30" data-name="Moisturizer Pack" min="0">
+<h3>💧 Moisturizer Cream</h3> <!-- UPDATED NAME -->
+<input type="number" data-price="30" data-name="Moisturizer Cream" min="0">
 </div>
+
 </div>
 
 <!-- ORDER BOX -->
@@ -303,7 +278,7 @@ textarea { height: 65px; }
 <button class="btn" onclick="placeOrder()">📩 WhatsApp Order</button>
 </div>
 
-<!-- ⭐ FULL COMPANY DETAILS ADDED HERE -->
+<!-- COMPANY DETAILS -->
 <div class="company-full">
 
 <b>✔ Contact Name:</b> MG Manisha Glow Ayurvedic<br>
@@ -317,7 +292,7 @@ textarea { height: 65px; }
 </div>
 
 <div class="footer">
-© <span id="yr"></span> MG Manisha Glow Ayurvedic · Natural Herbal Care 🌿
+© <span id="yr"></span> MG Manisha Glow Ayurvedic 🌿
 </div>
 
 </div>
