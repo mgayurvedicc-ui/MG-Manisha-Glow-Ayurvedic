@@ -3,399 +3,296 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MG Manisha Glow Ayurvedic – Premium Landing Page</title>
-
-<!-- Premium Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<title>MG Manisha Glow Ayurvedic</title>
 
 <style>
-
-/* ROOT COLORS */
-:root {
-  --bg1: #e9f5e9;
-  --bg2: #d6edd6;
-  --text: #1f341f;
-  --accent: #4b7f39;
-  --accent2: #2f5e28;
-  --card: rgba(255,255,255,0.92);
-  --gold: #ba9541;
-}
-
-/* BODY */
+/* -------------------- GLOBAL --------------------- */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Cormorant Garamond", serif;
-  background: var(--bg1);
-  color: var(--text);
-  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #faf7ef;
+    color: #2f3b26;
 }
 
-/* BACKGROUND ANIMATION */
+/* Soft Herbal Pattern Background */
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(
-     120deg,
-     rgba(200,255,200,0.25),
-     rgba(120,170,120,0.30),
-     rgba(220,255,220,0.25)
-  );
-  filter: blur(60px);
-  animation: herbalFlow 10s infinite alternate ease-in-out;
-  z-index: -2;
-}
-@keyframes herbalFlow {
-  from { opacity: .55; }
-  to   { opacity: .88; filter: blur(80px); }
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.imgur.com/2O8l6MT.png');
+    opacity: 0.09;
+    z-index: -1;
 }
 
-/* LOGO WATERMARK */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url('main-logo.jpg');
-  background-size: 650px;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.10;
-  z-index: -1;
+/* -------------------- HEADER --------------------- */
+.header {
+    background: linear-gradient(to bottom right, #c9e7c3, #f5f0da);
+    padding: 30px;
+    text-align: center;
+    border-bottom: 5px solid #8fbf7a;
+    background-image: url('https://images.unsplash.com/photo-1590393804594-2b51d7c5ee54?auto=format&fit=crop&w=1400&q=60');
+    background-size: cover;
+    background-position: center;
+    color: white;
 }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 110px 20px;
-}
-.hero h1 {
-  font-size: 56px;
-  font-weight: 700;
-  color: var(--accent2);
-  font-family: "Playfair Display", serif;
-  text-shadow: 0 3px 10px rgba(0,0,0,.18);
-}
-.hero p {
-  font-size: 22px;
-  margin-top: 10px;
-  color: var(--accent);
-  letter-spacing: 1px;
+.header h1 {
+    font-size: 35px;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px #000;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 1180px;
-  margin: auto;
-  padding: 20px;
+.header h2 {
+    font-size: 20px;
+    margin-top: 5px;
+    text-shadow: 2px 2px 8px #000;
 }
 
-/* SECTION TITLE */
+/* -------------------- PRODUCT GRID --------------------- */
 .section-title {
-  text-align: center;
-  font-size: 34px;
-  font-weight: 700;
-  color: var(--accent2);
-  margin-top: 35px;
-  margin-bottom: 20px;
-  font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 30px;
+    color: #3e5d2c;
 }
 
-/* ABOUT BOX */
-.about-box {
-  background: var(--card);
-  padding: 30px;
-  border-radius: 18px;
-  margin: 20px auto;
-  max-width: 960px;
-  box-shadow: 0 10px 28px rgba(0,0,0,.15);
-  border-left: 5px solid var(--gold);
+.products, .facepack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
-/* PRODUCT GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 25px;
-}
-
+/* Aesthetic Card */
 .card {
-  background: var(--card);
-  padding: 18px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.10);
-  border: 1px solid rgba(130,160,130,0.3);
-  transition: .3s;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transition: 0.3s;
+    border: 1px solid #dfe8d3;
+    backdrop-filter: blur(4px);
 }
-.card:hover { transform: translateY(-6px); }
 
-.thumb {
-  height: 150px;
-  border-radius: 12px;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 10px;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+.card h3 {
+    margin: 5px 0;
+    font-size: 20px;
+    color: #2e4821;
 }
 
 .card input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #bbb;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #a5b99a;
+    margin-top: 10px;
+    font-size: 15px;
 }
 
-/* ORDER SUMMARY */
+/* -------------------- ORDER FORM --------------------- */
 .order-box {
-  background: var(--card);
-  padding: 20px;
-  border-radius: 16px;
-  margin: 40px auto;
-  max-width: 680px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.1);
-  border: 1px solid rgba(120,150,120,0.3);
+    width: 90%;
+    max-width: 600px;
+    margin: 35px auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.97);
+    border-radius: 18px;
+    border: 1px solid #d3dfc6;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.10);
 }
 
-.order-box input,
-.order-box textarea {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 10px;
-  border: 1px solid #bbb;
-  background: #fafafa;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
+.order-box input, .order-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: 1px solid #a3b899;
+    font-size: 15px;
 }
 
-textarea { height: 75px; }
-
-.total-line {
-  font-size: 26px;
-  margin-top: 12px;
-  font-weight: 700;
-  color: var(--accent2);
+textarea {
+    height: 70px;
 }
 
-/* BUTTON */
+/* Button */
 .btn {
-  width: 100%;
-  background: var(--accent);
-  color: white;
-  padding: 16px;
-  border: none;
-  border-radius: 12px;
-  margin-top: 18px;
-  font-size: 20px;
-  cursor: pointer;
-}
-.btn:hover { background: var(--accent2); }
-
-/* CONTACT BOX */
-.contact-box {
-  margin-top: 50px;
-  padding: 20px;
-  border-radius: 16px;
-  background: var(--card);
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 10px 25px rgba(0,0,0,.1);
-  border-left: 5px solid var(--gold);
-  border-right: 5px solid var(--gold);
-  font-size: 18px;
-  line-height: 1.7;
+    width: 100%;
+    padding: 12px;
+    background: #6f9e58;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.contact-box b {
-  color: var(--accent2);
-  font-size: 22px;
-  font-family: "Playfair Display", serif;
+.btn:hover {
+    background: #568843;
 }
 
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 20px;
-  color: var(--accent2);
+/* -------------------- COMPANY DETAILS --------------------- */
+.company-details {
+    background: rgba(255,255,255,0.95);
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    border: 1px solid #d9e7cd;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
+.company-details p {
+    margin: 5px 0;
+}
+
+/* -------------------- FOOTER --------------------- */
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 20px;
+    background: #e6f0e0;
+    border-top: 2px solid #9fbd94;
+}
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>MG Manisha Glow Ayurvedic</h1>
-  <p>Pure • Natural • Herbal • Premium Ayurvedic Skin Wellness</p>
+<!-- HERO HEADER -->
+<div class="header">
+    <h1>🌿 MG Manisha Glow Ayurvedic</h1>
+    <h2>Premium Home-Made Ayurvedic Products</h2>
 </div>
 
-<div class="container">
+<!-- SOAP SECTION -->
+<h2 class="section-title">🧼 Soap Collection (₹50)</h2>
 
-<!-- ABOUT -->
-<h2 class="section-title">🌿 About Our Brand</h2>
+<div class="products">
 
-<div class="about-box">
- "आम्ही घरी बनवलेले १००% नैसर्गिक आयुर्वेदिक स्किनकेअर उत्पादने देतो. आमची सर्व साबण आणि फेस पॅक केमिकल-मुक्त, पूर्णपणे हर्बल रेसिपीने बनवलेले आहेत. यामुळे तुमचा चेहरा आणि त्वचा निरोगी, चमकदार आणि ताजीतवानी दिसते!" 
-</div>
-
-<!-- PRODUCTS -->
-<h2 class="section-title">🧼 Premium Product Collection</h2>
-
-<div class="grid">
-
-<!-- Neem Soap -->
-<div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1582719478244-ff65d3f7b7a3?auto=format')"></div>
-<h3>🍃 Neem Soap</h3>
-<input type="number" data-price="50" data-name="Neem Soap" min="0">
-</div>
-
-<!-- Tulasi -->
-<div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format')"></div>
-<h3>🌿 Tulasi Soap</h3>
-<input type="number" data-price="50" data-name="Tulasi Soap" min="0">
-</div>
-
-<!-- Aloe -->
-<div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1560264280-2ace7a2b4f0f?auto=format')"></div>
-<h3>🍀 Aloe Vera Soap</h3>
-<input type="number" data-price="50" data-name="Aloe Vera Soap" min="0">
-</div>
-
-<!-- Goat -->
-<div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1579710757331-0a7f9d3d1e40?auto=format')"></div>
-<h3>🥛 Goat Milk Soap</h3>
-<input type="number" data-price="50" data-name="Goat Milk Soap" min="0">
-</div>
-
-<!-- Charcoal -->
-<div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1529921879218-1f6b61c95ef8?auto=format')"></div>
-<h3>🖤 Charcoal Soap</h3>
-<input type="number" data-price="50" data-name="Charcoal Soap" min="0">
-</div>
-
-<!-- Turmeric -->
-<div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1581091012184-7a7f9d3d1e40?auto=format')"></div>
-<h3>✨ Turmeric Soap</h3>
-<input type="number" data-price="50" data-name="Turmeric Soap" min="0">
-</div>
-
-<!-- Rice -->
-<div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1556228453-3c9cc9f7d7b9?auto=format')"></div>
-<h3>🍚 Rice Potato Soap</h3>
-<input type="number" data-price="50" data-name="Rice Potato Soap" min="0">
-</div>
-
-<!-- Bheem -->
-<div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1603575448399-e8a37d6b7d77?auto=format')"></div>
-<h3>Bheem Sen Kapur Soap</h3>
-<input type="number" data-price="50" data-name="Bheem Sen Kapur Soap" min="0">
-</div>
-
-<!-- Neem Face pack -->
-<div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1598531371365-6b7f1f6d4c9b?auto=format')"></div>
-<h3>🍃 Neem Leaf Powder</h3>
-<input type="number" data-price="30" data-name="Neem Face Pack" min="0">
-</div>
-
-<!-- Moisturizer -->
-<div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1542444459-db8a1b2d7b2a?auto=format')"></div>
-<h3>💧 Moisturizer Cream</h3>
-<input type="number" data-price="30" data-name="Moisturizer Cream" min="0">
-</div>
+    <div class="card"><h3>🍃 Neem Soap</h3><input type="number" id="Neem" min="0"></div>
+    <div class="card"><h3>🌿 Tulasi Soap</h3><input type="number" id="Tulasi" min="0"></div>
+    <div class="card"><h3>🍀 Aloe Vera Soap</h3><input type="number" id="Aloe" min="0"></div>
+    <div class="card"><h3>🥛 Goat Milk Soap</h3><input type="number" id="Goat" min="0"></div>
+    <div class="card"><h3>🖤 Charcoal Soap</h3><input type="number" id="Charcoal" min="0"></div>
+    <div class="card"><h3>✨ Turmeric Soap</h3><input type="number" id="Turmeric" min="0"></div>
+    <div class="card"><h3>🍚 Rice Potato Soap</h3><input type="number" id="Rice" min="0"></div>
+    <div class="card"><h3>Bheem Sen Kapur Soap</h3><input type="number" id="Bheem" min="0"></div>
 
 </div>
 
-<!-- ORDER SUMMARY -->
+<!-- FACE PACK SECTION -->
+<h2 class="section-title">🌸 Face Pack Collection (₹30)</h2>
+
+<div class="facepack">
+    <div class="card"><h3>🍃 Neem Leaf Powder Pack</h3><input type="number" id="NFP" min="0"></div>
+    <div class="card"><h3>💧 Moisturizer Pack</h3><input type="number" id="MFP" min="0"></div>
+</div>
+
+<!-- ORDER FORM -->
 <div class="order-box">
-<h2 style="text-align:center;">📝 Order Summary</h2>
+<h2 style="text-align:center;">📝 Customer Details</h2>
 
-<input id="custName" placeholder="👤 Your Name">
-<input id="custPhone" placeholder="📞 Phone Number">
-<textarea id="custAddr" placeholder="🏠 Full Delivery Address"></textarea>
+<input type="text" id="custName" placeholder="👤 Your Name">
+<input type="text" id="custPhone" placeholder="📞 Phone Number">
+<textarea id="custAddr" placeholder="🏠 Full Address"></textarea>
 
-<div class="total-line">Total: <span id="grandTotal">₹0</span></div>
+<input type="text" id="totalAmount" placeholder="💵 Total Amount (Auto)" readonly>
 
-<button class="btn" onclick="placeOrder()">📩 WhatsApp Order</button>
+<button class="btn" onclick="placeOrder()">📩 WhatsApp Order भेजें</button>
 </div>
 
-<!-- CONTACT -->
-<h2 class="section-title">📞 Contact Details</h2>
-
-<div class="contact-box">
-<b>MG Manisha Glow Ayurvedic</b><br>
-📞 Mobile: 8888942084<br>
-💬 WhatsApp: 8888942084<br>
-📍 Address: At Post Rawande, Tal Kopargaon, Dist Ahilyanagar 423601<br>
-✉ Email: mgayurvedicc@gmail.com <br>
-📸 Instagram: @mg_manisha_glow_Ayurvedic_ <br>
-🌐 Website: https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/
+<!-- COMPANY DETAILS -->
+<div class="company-details">
+    <p><b>Contact Name:</b> MG Manisha Glow Ayurvedic</p>
+    <p><b>Mobile:</b> 8888942084</p>
+    <p><b>WhatsApp:</b> 8888942084</p>
+    <p><b>Address:</b> Rawande, Kopargaon, Ahilyanagar 423601</p>
+    <p><b>Email:</b> mgayurvedicc@gmail.com</p>
+    <p><b>Instagram:</b> @mg_manisha_glow_Ayurvedic_</p>
+    <p><b>Website:</b> https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/</p>
 </div>
 
-<div class="footer">
+<footer>
 © <span id="year"></span> MG Manisha Glow Ayurvedic 🌿
-</div>
-
-</div>
+</footer>
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* AUTO TOTAL */
+/* AUTO TOTAL PRICE */
 function calcTotal() {
-  let total = 0;
-  document.querySelectorAll("input[type='number']").forEach(i => {
-    total += (parseInt(i.value) || 0) * parseInt(i.dataset.price);
-  });
-  document.getElementById("grandTotal").innerText = "₹" + total;
-  return total;
+    let total =
+        (Neem.value * 50) +
+        (Tulasi.value * 50) +
+        (Aloe.value * 50) +
+        (Goat.value * 50) +
+        (Charcoal.value * 50) +
+        (Turmeric.value * 50) +
+        (Rice.value * 50) +
+        (Bheem.value * 50) +
+        (NFP.value * 30) +
+        (MFP.value * 30);
+
+    document.getElementById("totalAmount").value = total;
 }
 
-document.querySelectorAll("input[type='number']").forEach(i =>
-  i.addEventListener("input", calcTotal)
-);
+/* AUTO CALCULATE EVERY TIME USER TYPES */
+document.querySelectorAll("input[type='number']").forEach(input=>{
+    input.addEventListener("input", calcTotal);
+});
 
 /* SEND ORDER */
 function placeOrder() {
-  const name = custName.value.trim();
-  const phone = custPhone.value.trim();
-  const addr = custAddr.value.trim();
-  const total = calcTotal();
 
-  if(!name || !phone || !addr){
-    alert("कृपया Name, Phone और Address भरें!");
-    return;
-  }
+    let name = custName.value;
+    let phone = custPhone.value;
+    let addr = custAddr.value;
+    let total = totalAmount.value;
 
-  let items = [];
-  document.querySelectorAll("input[type='number']").forEach(i=>{
-    if(parseInt(i.value) > 0) {
-      items.push(i.dataset.name + " — " + i.value);
+    if (!name || !phone || !addr) {
+        alert("कृपया Name, Phone और Address भरें!");
+        return;
     }
-  });
 
-  let msg =
-`🧾 New Order  
-${items.join("\n")}
-💰 Total: ₹${total}
+    let msg =
+`🧾 *New Order Received*  
+----------------------------------  
+🧼 *Soap Quantities:*  
+🍃 Neem: ${Neem.value}  
+🌿 Tulasi: ${Tulasi.value}  
+🍀 Aloe Vera: ${Aloe.value}  
+🥛 Goat Milk: ${Goat.value}  
+🖤 Charcoal: ${Charcoal.value}  
+✨ Turmeric: ${Turmeric.value}  
+🍚 Rice Potato: ${Rice.value}  
+Bheem Sen Kapur: ${Bheem.value}  
 
-👤 Name: ${name}
-📞 Phone: ${phone}
-🏠 Address: ${addr}`;
+🌸 *Face Pack:*  
+🍃 Neem Leaf Pack: ${NFP.value}  
+💧 Moisturizer Pack: ${MFP.value}  
 
-  window.open("https://wa.me/918888942084?text=" + encodeURIComponent(msg));
+----------------------------------  
+💵 *Total Amount:* ₹${total}  
+
+👤 *Customer Name:* ${name}  
+📞 *Phone:* ${phone}  
+🏠 *Address:*  
+${addr}`;
+
+    window.open(`https://wa.me/918888942084?text=${encodeURIComponent(msg)}`);
 }
 </script>
 
