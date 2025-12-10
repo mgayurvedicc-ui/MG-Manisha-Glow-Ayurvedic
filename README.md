@@ -5,171 +5,209 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MG Manisha Glow Ayurvedic</title>
 
-<style>
+<!-- Premium Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
-/* FONT */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+<style>
 
 /* ROOT COLORS */
 :root {
-  --bg: #faf7ef;
-  --text: #2f3b26;
-  --card: rgba(255,255,255,0.95);
-  --shadow: rgba(0,0,0,0.1);
-  --accent: #75a96c;
-  --accent2: #4a6d3c;
+  --bg1: #e9f3ea;
+  --bg2: #d0e8d2;
+  --bg3: #e8f8e5;
+  --text: #1f3b1f;
+  --accent: #4b7f39;
+  --accent2: #2f5e28;
+  --card: rgba(255,255,255,0.93);
+  --gold: #b58e43;
 }
 
-body.dark {
-  --bg: #1c1f1d;
-  --text: #e9f5e1;
-  --card: rgba(32,35,33,0.95);
-  --shadow: rgba(0,0,0,0.4);
-  --accent: #8bd48e;
-  --accent2: #5ebf69;
-}
-
-/* BODY */
+/* BODY STYLING */
 body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg);
-    font-family: "Poppins", sans-serif;
-    color: var(--text);
-    transition: 0.4s;
+  margin: 0;
+  padding: 0;
+  font-family: "Cormorant Garamond", serif;
+  background: var(--bg1);
+  color: var(--text);
+  overflow-x: hidden;
 }
 
-/* BACKGROUND LOGO WATERMARK */
+/* MOVING GRADIENT LIGHT FLOW */
 body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: url('main-logo.jpg'); /* ← आपका दिया हुआ LOGO */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 650px;
-    opacity: 0.11;  /* Light watermark effect */
-    z-index: -1;
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+     120deg,
+     rgba(200,255,200,0.25),
+     rgba(150,200,150,0.25),
+     rgba(220,255,220,0.25)
+  );
+  animation: glow 10s infinite alternate ease-in-out;
+  z-index: -2;
+}
+@keyframes glow {
+  0% { filter: blur(40px); opacity: .6; }
+  100% { filter: blur(70px); opacity: .9; }
 }
 
-/* DARK MODE BUTTON */
-.toggle-btn {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    background: var(--accent);
-    padding: 10px 16px;
-    border-radius: 50px;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    box-shadow: 0 4px 12px var(--shadow);
-    z-index: 10;
+/* Background Logo Watermark */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('main-logo.jpg');
+  background-size: 650px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.10;
+  z-index: -1;
 }
 
 /* HEADER */
 .header {
-    background-image: url('https://images.unsplash.com/photo-1590393804594-2b51d7c5ee54?auto=format&fit=crop&w=1400&q=60');
-    background-size: cover;
-    background-position: center;
-    padding: 45px 20px;
-    text-align: center;
-    color: white;
-    border-radius: 0 0 18px 18px;
+  text-align: center;
+  padding: 45px 20px;
+  background: transparent;
 }
-.header h1 { font-size: 36px; font-weight: 700; }
-.header h2 { margin-top: 8px; font-size: 20px; }
+
+.header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--accent2);
+  text-shadow: 0 3px 10px rgba(0,0,0,.15);
+  font-family: "Playfair Display", serif;
+}
+
+.header h2 {
+  margin-top: 5px;
+  font-size: 20px;
+  color: var(--accent);
+}
 
 /* CONTAINER */
-.container { max-width: 1150px; margin: auto; padding: 20px; }
+.container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 20px;
+}
 
-.section-title { text-align:center; font-size:24px; color:var(--accent2); }
+/* TITLES */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-top: 40px;
+  color: var(--accent2);
+  font-weight: 700;
+}
 
 /* GRID */
 .grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 22px;
 }
 
-/* CARD */
+/* CARDS */
 .card {
   background: var(--card);
   padding: 16px;
   border-radius: 14px;
-  box-shadow: 0 10px 25px var(--shadow);
+  box-shadow: 0 10px 25px rgba(0,0,0,.10);
   transition: .3s;
+  border: 1px solid rgba(120,150,120,0.3);
 }
 .card:hover { transform: translateY(-6px); }
 
+/* PRODUCT THUMBNAILS */
 .thumb {
-  height: 140px;
-  border-radius: 12px;
+  height: 150px;
+  border-radius: 14px;
   background-size: cover;
   background-position: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 /* INPUT */
 .card input {
   width: 100%;
   padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  background: var(--bg);
-  color: var(--text);
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
 }
 
 /* ORDER BOX */
 .order-box {
-  margin: 30px auto;
   background: var(--card);
-  padding: 20px;
-  border-radius: 15px;
-  width: 100%;
+  padding: 22px;
+  border-radius: 16px;
+  margin: 40px auto;
   max-width: 720px;
-  box-shadow: 0 10px 25px var(--shadow);
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+  border: 1px solid rgba(120,150,120,0.3);
 }
 
-.order-box input, .order-box textarea {
+.order-box input,
+.order-box textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
+  margin-top: 10px;
   border-radius: 10px;
-  border: 1px solid #ccc;
-  background: var(--bg);
-  color: var(--text);
+  border: 1px solid #bbb;
+  background: #f9f9f9;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
 }
 
-textarea { height: 65px; }
+textarea { height: 75px; }
 
+.total-line {
+  font-size: 24px;
+  margin-top: 15px;
+  font-weight: 600;
+  color: var(--accent2);
+}
+
+/* BUTTON */
 .btn {
   width: 100%;
   background: var(--accent);
   color: white;
-  border: none;
   padding: 14px;
-  margin-top: 15px;
-  border-radius: 10px;
-  font-size: 17px;
+  border: none;
+  border-radius: 12px;
+  margin-top: 18px;
+  font-size: 18px;
   cursor: pointer;
+  transition: .3s;
 }
 .btn:hover { background: var(--accent2); }
 
-/* COMPANY DETAILS */
-.company-full {
-  margin-top: 40px;
+/* CONTACT DETAILS - PREMIUM STYLE */
+.contact-box {
+  margin-top: 50px;
   padding: 25px;
-  border-radius: 14px;
+  border-radius: 16px;
   background: var(--card);
-  box-shadow: 0 10px 25px var(--shadow);
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+  border-left: 5px solid var(--gold);
+  border-right: 5px solid var(--gold);
+  font-size: 18px;
+  line-height: 1.8;
 }
-.company-full b { color: var(--accent2); }
+
+.contact-box b {
+  color: var(--accent2);
+  font-size: 20px;
+}
 
 /* FOOTER */
 .footer {
-  text-align:center;
-  padding: 15px;
+  text-align: center;
+  padding: 25px;
+  font-size: 17px;
   color: var(--accent2);
 }
 
@@ -178,66 +216,71 @@ textarea { height: 65px; }
 
 <body>
 
-<div class="toggle-btn" onclick="toggleDark()">🌙 Dark / ☀️ Light</div>
-
 <!-- HEADER -->
 <div class="header">
-    <h1>🌿 MG Manisha Glow Ayurvedic</h1>
-    <h2>Pure · Natural · Herbal Wellness</h2>
+  <h1>MG Manisha Glow Ayurvedic</h1>
+  <h2>Pure • Natural • Herbal Wellness</h2>
 </div>
 
 <div class="container">
 
-<!-- SOAP -->
+<!-- SOAP SECTION -->
 <h3 class="section-title">🧼 Soap Collection — ₹50</h3>
 
 <div class="grid">
 
-<!-- Soap Cards Same -->
+<!-- Neem -->
 <div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1582719478244-ff65d3f7b7a3?auto=format&fit=crop&w=800&q=60')"></div>
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1582719478244-ff65d3f7b7a3?auto=format&fit=crop&w=800')"></div>
 <h3>🍃 Neem Soap</h3>
 <input type="number" data-price="50" data-name="Neem Soap" min="0">
 </div>
 
+<!-- Tulasi -->
 <div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=60')"></div>
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800')"></div>
 <h3>🌿 Tulasi Soap</h3>
 <input type="number" data-price="50" data-name="Tulasi Soap" min="0">
 </div>
 
+<!-- Aloe -->
 <div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1560264280-2ace7a2b4f0f?auto=format&fit=crop&w=800&q=60')"></div>
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1560264280-2ace7a2b4f0f?auto=format&fit=crop&w=800')"></div>
 <h3>🍀 Aloe Vera Soap</h3>
 <input type="number" data-price="50" data-name="Aloe Vera Soap" min="0">
 </div>
 
+<!-- Goat -->
 <div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1579710757331-0a7f9d3d1e40?auto=format&fit=crop&w=800&q=60')"></div>
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1579710757331-0a7f9d3d1e40?auto=format&fit=crop&w=800')"></div>
 <h3>🥛 Goat Milk Soap</h3>
 <input type="number" data-price="50" data-name="Goat Milk Soap" min="0">
 </div>
 
+<!-- Charcoal -->
 <div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1529921879218-1f6b61c95ef8?auto=format&fit=crop&w=800&q=60')"></div>
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1529921879218-1f6b61c95ef8?auto=format&fit=crop&w=800')"></div>
 <h3>🖤 Charcoal Soap</h3>
 <input type="number" data-price="50" data-name="Charcoal Soap" min="0">
 </div>
 
+<!-- Turmeric -->
 <div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1581091012184-7a7a1d0f6a6a?auto=format&fit=crop&w=800&q=60')"></div>
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1581091012184-7a7f9d3d1e40?auto=format&fit=crop&w=800')"></div>
 <h3>✨ Turmeric Soap</h3>
 <input type="number" data-price="50" data-name="Turmeric Soap" min="0">
 </div>
 
+<!-- Rice -->
 <div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1556228453-3c9cc9f3d0b9?auto=format&fit=crop&w=800&q=60')"></div>
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1556228453-3c9cc9f7d7b9?auto=format&fit=crop&w=800')"></div>
 <h3>🍚 Rice Potato Soap</h3>
 <input type="number" data-price="50" data-name="Rice Potato Soap" min="0">
 </div>
 
+<!-- Bheem -->
 <div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1603575448399-e8a37d6b7d77?auto=format&fit=crop&w=800&q=60')"></div>
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1603575448399-e8a37d6b7d77?auto=format&fit=crop&w=800')"></div>
 <h3>Bheem Sen Kapur Soap</h3>
 <input type="number" data-price="50" data-name="Bheem Sen Kapur Soap" min="0">
 </div>
@@ -249,15 +292,17 @@ textarea { height: 65px; }
 
 <div class="grid">
 
+<!-- Neem Face Pack -->
 <div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1598531371365-6b7f1f6d4c9b?auto=format&fit=crop&w=800&q=60')"></div>
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1598531371365-6b7f1f6d4c9b?auto=format&fit=crop&w=800')"></div>
 <h3>🍃 Neem Leaf Powder</h3>
 <input type="number" data-price="30" data-name="Neem Leaf Powder" min="0">
 </div>
 
+<!-- Moisturizer Cream -->
 <div class="card">
-<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1542444459-db8a1b2d7b2a?auto=format&fit=crop&w=800&q=60')"></div>
-<h3>💧 Moisturizer Cream</h3> <!-- UPDATED NAME -->
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1542444459-db8a1b2d7b2a?auto=format&fit=crop&w=800')"></div>
+<h3>💧 Moisturizer Cream</h3>
 <input type="number" data-price="30" data-name="Moisturizer Cream" min="0">
 </div>
 
@@ -265,30 +310,26 @@ textarea { height: 65px; }
 
 <!-- ORDER BOX -->
 <div class="order-box">
-<h3>📝 Order Summary</h3>
+<h3 style="text-align:center;">📝 Order Summary</h3>
 
 <input id="custName" placeholder="👤 Your Name">
 <input id="custPhone" placeholder="📞 Phone Number">
 <textarea id="custAddr" placeholder="🏠 Full Delivery Address"></textarea>
 
-<div style="margin-top:12px;font-size:20px;">
-<b>Total: </b><span id="grandTotal">₹0</span>
-</div>
+<div class="total-line">Total: <span id="grandTotal">₹0</span></div>
 
 <button class="btn" onclick="placeOrder()">📩 WhatsApp Order</button>
 </div>
 
-<!-- COMPANY DETAILS -->
-<div class="company-full">
-
-<b>✔ Contact Name:</b> MG Manisha Glow Ayurvedic<br>
-<b>✔ Mobile Number:</b> 8888942084<br>
-<b>✔ WhatsApp Number:</b> 8888942084<br>
-<b>✔ Address:</b> At Post Rawande, Tal Kopargaon, Dist Ahilyanagar 423601<br>
-<b>✔ Email:</b> mgayurvedicc@gmail.com<br>
-<b>✔ Instagram ID:</b> @mg_manisha_glow_Ayurvedic_<br>
-<b>✔ Website:</b> https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/
-
+<!-- CONTACT BOX -->
+<div class="contact-box">
+<b>MG Manisha Glow Ayurvedic</b><br>
+📞 Mobile: 8888942084<br>
+💬 WhatsApp: 8888942084<br>
+📍 Address: At Post Rawande, Tal Kopargaon, Dist Ahilyanagar 423601<br>
+✉ Email: mgayurvedicc@gmail.com <br>
+📸 Instagram: @mg_manisha_glow_Ayurvedic_ <br>
+🌐 Website: https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/
 </div>
 
 <div class="footer">
@@ -297,10 +338,11 @@ textarea { height: 65px; }
 
 </div>
 
+
 <script>
 document.getElementById("yr").textContent = new Date().getFullYear();
 
-/* AUTO TOTAL */
+/* AUTO TOTAL CALCULATION */
 function calcTotal() {
   let total = 0;
   document.querySelectorAll("input[type='number']").forEach(i => {
@@ -309,13 +351,13 @@ function calcTotal() {
   document.getElementById("grandTotal").innerText = "₹" + total;
   return total;
 }
+
 document.querySelectorAll("input[type='number']").forEach(i =>
-    i.addEventListener("input", calcTotal)
+  i.addEventListener("input", calcTotal)
 );
 
 /* SEND ORDER */
 function placeOrder() {
-
   const name = custName.value.trim();
   const phone = custPhone.value.trim();
   const addr = custAddr.value.trim();
@@ -334,11 +376,10 @@ function placeOrder() {
   });
 
   let msg =
-`🧾 *New Order Received*
-
-📦 *Products:*
+`🧾 *New Order*
+--------------------
 ${items.join("\n")}
-
+--------------------
 💰 *Total:* ₹${total}
 
 👤 *Name:* ${name}
@@ -346,11 +387,6 @@ ${items.join("\n")}
 🏠 *Address:* ${addr}`;
 
   window.open("https://wa.me/918888942084?text=" + encodeURIComponent(msg));
-}
-
-/* DARK MODE */
-function toggleDark() {
-  document.body.classList.toggle("dark");
 }
 </script>
 
