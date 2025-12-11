@@ -1,234 +1,512 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MG Manisha Glow Ayurvedic – Premium Invoice</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>🌿 MG Manisha Glow Ayurvedic</title>
+
 <style>
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(135deg, #002d18, #0b5e36, #d4af37);
-        color: #fff;
-        padding: 20px;
-    }
 
-    .container {
-        max-width: 900px;
-        margin: auto;
-        background: rgba(255,255,255,0.08);
-        padding: 25px;
-        border-radius: 15px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.2);
-    }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #fffdf9;
+    position: relative;
+    overflow-x: hidden;
+}
 
-    .header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+/* Background Logo Watermark */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('main-logo.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 520px;
+    opacity: 0.13;
+    z-index: -1;
+}
 
-    .header img {
-        width: 120px;
-    }
+.top-logo, .bottom-logo {
+    display: block;
+    margin: 20px auto;
+}
+.top-logo { width: 130px; }
+.bottom-logo { width: 110px; }
 
-    h2 {
-        color: #ffd700;
-        margin-bottom: 5px;
-    }
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
 
-    label {
-        font-weight: 600;
-    }
+h1, h2 {
+    text-align: center;
+    color: #1f3812;
+    font-weight: 700;
+}
 
-    input, select {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        border-radius: 8px;
-        margin: 6px 0 15px;
-        font-size: 16px;
-    }
+.products, .facepack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
 
-    button {
-        width: 100%;
-        padding: 12px;
-        background: #ffd700;
-        border: none;
-        border-radius: 10px;
-        color: #000;
-        font-size: 18px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: 0.2s;
-    }
+.card {
+    background: rgba(255,255,255,0.90);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    text-align: center;
+}
 
-    button:hover {
-        background: #ffcc00;
-    }
+.card input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
 
-    table {
-        width: 100%;
-        margin-top: 20px;
-        border-collapse: collapse;
-        background: rgba(0,0,0,0.3);
-        border-radius: 10px;
-        overflow: hidden;
-    }
+.btn {
+    background: #6b8e23;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
 
-    table th, table td {
-        padding: 12px;
-        text-align: left;
-        border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
+/* ORDER BOX */
+.order-box {
+    background: rgba(255,255,255,0.95);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 25px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
 
-    table th {
-        background: rgba(255,215,0,0.2);
-        color: #ffd700;
-        font-size: 17px;
-    }
+.order-box input, .order-box textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    font-size: 14px;
+}
 
-    .total-box {
-        text-align: right;
-        margin-top: 15px;
-        font-size: 22px;
-        font-weight: 600;
-        color: #ffd700;
-    }
+.order-box textarea {
+    height: 60px;
+}
 
-    .invoice-box {
-        background: rgba(255,255,255,0.1);
-        padding: 20px;
-        border-radius: 12px;
-        margin-top: 25px;
-    }
+/* COMPANY DETAILS */
+.company-details {
+    text-align: center;
+    margin-top: 35px;
+    background: rgba(255,255,255,0.90);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.company-details p {
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    color: #666;
+}
+
+/* =============BOTTOM SHEET============ */
+.sheet-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: flex-end;
+    z-index: 9999;
+    background: rgba(0,0,0,0.40);
+    backdrop-filter: blur(4px);
+}
+
+.sheet {
+    width: 100%;
+    max-width: 1100px;
+    background: #ffffffee;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -12px 36px rgba(0,0,0,0.25);
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 18px;
+    transform: translateY(100%);
+    transition: transform 300ms ease;
+}
+
+.sheet.open { transform: translateY(0%); }
+
+.sheet-header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.sheet-title {
+    font-weight:700;
+    font-size:18px;
+    color:#16360f;
+}
+
+.close {
+    background: #2c5f2d;
+    color:#fff;
+    border:none;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.sheet table {
+    width:100%;
+    border-collapse:collapse;
+}
+.sheet td {
+    padding:8px 6px;
+    border-bottom:1px solid #eee;
+    font-size:14px;
+}
+
+.share-btn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #128c7e;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.pdf-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #444;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
 </style>
 </head>
 <body>
 
 <div class="container">
 
-    <div class="header">
-        <img src="main logo.jpg" alt="Logo">
-        <h2>MG Manisha Glow Ayurvedic - Premium Invoice</h2>
-    </div>
+<img src="main-logo.jpg" class="top-logo">
 
-    <!-- Customer Details -->
-    <label>Customer Name</label>
-    <input type="text" id="custName" placeholder="Enter customer name">
+<h1>🌿 MG Manisha Glow Ayurvedic</h1>
+<h2>✨ Premium Home-Made Ayurvedic Products</h2>
 
-    <label>Phone Number</label>
-    <input type="text" id="custPhone" placeholder="Enter phone number">
+<!-- SOAP SECTION -->
+<h2>🧼 Soap Collection (₹50 Each)</h2>
 
-    <label>Address</label>
-    <input type="text" id="custAddress" placeholder="Enter address">
+<div class="products">
 
+<div class="card">
+    <h3>🍃 Neem Soap</h3>
+    <input type="number" id="Neem" min="0" placeholder="Quantity">
+    <button class="btn" onclick="openSheet('neem')">View Chemical Parameters Report</button>
+</div>
 
-    <!-- Product Dropdown -->
-    <label>Select Product</label>
-    <select id="productList">
-        <option value="Neem Tulsi Soap|70">Neem Tulsi Soap — ₹70</option>
-        <option value="Aloe Vera Soap|80">Aloe Vera Soap — ₹80</option>
-        <option value="Red Sandal Soap|90">Red Sandal Soap — ₹90</option>
-        <option value="MG Glow Premium Soap|120">MG Glow Premium Soap — ₹120</option>
-    </select>
+<div class="card">
+    <h3>🌿 Tulasi Soap</h3>
+    <input type="number" id="Tulasi" min="0" placeholder="Quantity">
+    <button class="btn" onclick="openSheet('tulasi')">View Chemical Parameters Report</button>
+</div>
 
-    <label>Quantity</label>
-    <input type="number" id="qty" min="1" value="1">
+<div class="card">
+    <h3>🍀 Aloe Vera Soap</h3>
+    <input type="number" id="Aloe" min="0" placeholder="Quantity">
+</div>
 
-    <button onclick="addItem()">Add Item</button>
+<div class="card">
+    <h3>🥛 Goat Milk Soap</h3>
+    <input type="number" id="Goat" min="0" placeholder="Quantity">
+</div>
 
+<div class="card">
+    <h3>🖤 Charcoal Soap</h3>
+    <input type="number" id="Charcoal" min="0" placeholder="Quantity">
+    <button class="btn" onclick="openSheet('charcoal')">View Chemical Parameters Report</button>
+</div>
 
-    <!-- Invoice Table -->
-    <table id="invoiceTable" style="display:none;">
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody"></tbody>
-    </table>
+<div class="card">
+    <h3>✨ Turmeric Soap</h3>
+    <input type="number" id="Turmeric" min="0" placeholder="Quantity">
+    <button class="btn" onclick="openSheet('turmeric')">View Chemical Parameters Report</button>
+</div>
 
-    <div class="total-box" id="grandTotalBox" style="display:none;">Grand Total: ₹0</div>
+<div class="card">
+    <h3>🍚 Rice Potato Soap</h3>
+    <input type="number" id="Rice" min="0" placeholder="Quantity">
+</div>
 
-    <button onclick="generatePDF()" id="pdfBtn" style="display:none;margin-top:20px;">Download PDF Invoice</button>
-    <button onclick="sendWhatsApp()" id="waBtn" style="display:none;margin-top:15px;background:#25D366;color:#fff;">Send on WhatsApp</button>
+<div class="card">
+    <h3>Bheem Sen Kapur Soap</h3>
+    <input type="number" id="Bheem" min="0" placeholder="Quantity">
+</div>
+
+</div>
+
+<!-- FACE PACK -->
+<h2>🌸 Face Pack Collection (₹30 Each)</h2>
+
+<div class="facepack">
+
+<div class="card">
+    <h3>🍃 Neem Leaf Powder</h3>
+    <input type="number" id="NFP" min="0" placeholder="Quantity">
+</div>
+
+<div class="card">
+    <h3>💧 Moisturizer Cream</h3>
+    <input type="number" id="MFP" min="0" placeholder="Quantity">
+</div>
+
+</div>
+
+<!-- ORDER FORM -->
+<div class="order-box">
+<h2>📝 Customer Details</h2>
+
+<input type="text" id="custName" placeholder="👤 Your Name">
+<input type="text" id="custPhone" placeholder="📞 Phone Number">
+<textarea id="custAddr" placeholder="🏠 Full Address"></textarea>
+
+<input type="text" id="totalAmount" placeholder="💵 Total Amount (Auto)" readonly>
+
+<button class="btn" onclick="placeOrder()">📩 WhatsApp Order भेजें</button>
+</div>
+
+<!-- COMPANY DETAILS -->
+<div class="company-details">
+<p><b>🏢 Contact Name:</b> MG Manisha Glow Ayurvedic</p>
+<p><b>📞 Mobile:</b> 8888942084</p>
+<p><b>💬 WhatsApp:</b> 8888942084</p>
+<p><b>📍 Address:</b> Rawande, Kopargaon, Ahilyanagar 423601</p>
+<p><b>📧 Email:</b> mgayurvedicc@gmail.com</p>
+<p><b>📸 Instagram:</b> @mg_manisha_glow_Ayurvedic_</p>
+<p><b>🌐 Website:</b> https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/</p>
+</div>
+
+<img src="main-logo.jpg" class="bottom-logo">
+
+<footer>
+© <span id="year"></span> MG Manisha Glow Ayurvedic 🌿
+</footer>
 
 </div>
 
 
-<!-- JS SECTION -->
+<!-- ============== BOTTOM SHEET ============== -->
+<div class="sheet-overlay" id="sheetOverlay">
+    <div class="sheet" id="sheet">
+        <div class="sheet-header">
+            <div class="sheet-title" id="sheetTitle">Report</div>
+            <button class="close" onclick="closeSheet()">Close</button>
+        </div>
+        <div id="sheetContent"></div>
+
+        <button class="share-btn" id="shareBtn">📤 Share Report</button>
+        <button class="pdf-btn" id="pdfBtn">📄 Download Report</button>
+    </div>
+</div>
+
+
 <script>
-let totalAmount = 0;
-let rows = [];
 
-function addItem() {
-    const selected = document.getElementById("productList").value.split("|");
-    const name = selected[0];
-    const price = parseInt(selected[1]);
-    const qty = parseInt(document.getElementById("qty").value);
-    const lineTotal = price * qty;
+/* YEAR SET */
+document.getElementById('year').textContent = new Date().getFullYear();
 
-    rows.push({name, qty, price, lineTotal});
-    totalAmount += lineTotal;
 
-    updateTable();
+/* AUTO TOTAL CALCULATION */
+function calcTotal() {
+    const pricing = {
+        Neem:50, Tulasi:50, Aloe:50, Goat:50,
+        Charcoal:50, Turmeric:50, Rice:50, Bheem:50,
+        NFP:30, MFP:30
+    };
+
+    let total = 0;
+
+    for (let id in pricing) {
+        let qty = parseInt(document.getElementById(id).value) || 0;
+        total += qty * pricing[id];
+    }
+
+    document.getElementById("totalAmount").value = total ? "₹ " + total : "";
 }
 
-function updateTable() {
-    const table = document.getElementById("invoiceTable");
-    const body = document.getElementById("tableBody");
-    const grandTotal = document.getElementById("grandTotalBox");
-    const pdfBtn = document.getElementById("pdfBtn");
-    const waBtn = document.getElementById("waBtn");
+document.querySelectorAll("input[type='number']").forEach(i =>
+    i.addEventListener("input", calcTotal)
+);
 
-    table.style.display = "table";
-    grandTotal.style.display = "block";
-    pdfBtn.style.display = "block";
-    waBtn.style.display = "block";
 
-    body.innerHTML = "";
+/* REPORT DATA */
+const REPORTS = {
 
-    rows.forEach(r => {
-        body.innerHTML += `
-            <tr>
-                <td>${r.name}</td>
-                <td>${r.qty}</td>
-                <td>₹${r.price}</td>
-                <td>₹${r.lineTotal}</td>
-            </tr>
-        `;
+neem:{
+title:"🍃 Neem Soap - Lab Report",
+data:`PH at 25°C: 6.13
+Lather: 212 ml
+Mush: 18.5 g
+Free Caustic Alkali: Absent
+Free Carbonated Alkali: Absent
+Grittiness: Passed
+Cracking: Passed
+Cleaning Efficiency: Passed
+Total Fatty Matter: 56.52%
+Synthetic Surface Active Agent: 52.14
+Fatty Matter From Dissolved Actives: 10.13`
+},
+
+tulasi:{
+title:"🌿 Tulasi Soap - Lab Report",
+data:`PH at 25°C: 5.89
+Lather: 204.3 ml
+Mush: 18.5 g
+Free Caustic Alkali: Absent
+Free Carbonated Alkali: Absent
+Grittiness: Passed
+Cracking: Passed
+Cleaning Efficiency: Passed
+Total Fatty Matter: 54.6%
+Synthetic Surface Active Agent: 46.2
+Fatty Matter From Dissolved Actives: 8.72`
+},
+
+charcoal:{
+title:"🖤 Charcoal Soap - Lab Report",
+data:`PH at 25°C: 6.64
+Lather: 202 ml
+Mush: 16.1 g
+Free Caustic Alkali: Absent
+Free Carbonated Alkali: Absent
+Grittiness: Passed
+Cracking: Passed
+Cleaning Efficiency: Passed
+Total Fatty Matter: 43%
+Synthetic Surface Active Agent: 44.8
+Fatty Matter From Dissolved Actives: 11.02`
+},
+
+turmeric:{
+title:"✨ Turmeric Soap - Lab Report",
+data:`PH at 25°C: 6.28
+Lather: 216.5 ml
+Mush: 22.3 g
+Free Caustic Alkali: Absent
+Free Carbonated Alkali: Absent
+Grittiness: Passed
+Cracking: Passed
+Cleaning Efficiency: Passed
+Total Fatty Matter: 64%
+Synthetic Surface Active Agent: 45.1
+Fatty Matter From Dissolved Actives: 18.0`
+}
+
+};
+
+
+/* OPEN SHEET */
+function openSheet(key){
+    const r = REPORTS[key];
+    document.getElementById("sheetTitle").innerText = r.title;
+
+    let html = "<table>";
+    r.data.split("\n").forEach(line=>{
+        const [k,v] = line.split(":");
+        html += <tr><td>${k}</td><td>${v}</td></tr>;
     });
+    html += "</table>";
 
-    grandTotal.innerHTML = `Grand Total: ₹${totalAmount}`;
+    document.getElementById("sheetContent").innerHTML = html;
+
+    document.getElementById("sheetOverlay").style.display="flex";
+    setTimeout(()=>document.getElementById("sheet").classList.add("open"),20);
+
+    /* Share on WhatsApp */
+    document.getElementById("shareBtn").onclick = ()=>{
+        const msg = r.title + "\n\n" + r.data;
+        window.open("https://wa.me/?text="+encodeURIComponent(msg));
+    };
+
+    /* Download TXT */
+    document.getElementById("pdfBtn").onclick = ()=>{
+        const blob = new Blob([r.title+"\n\n"+r.data], {type:"text/plain"});
+        const url = URL.createObjectURL(blob);
+        const a=document.createElement("a");
+        a.href=url;
+        a.download=r.title+".txt";
+        a.click();
+    };
 }
 
-function sendWhatsApp() {
-    const name = document.getElementById("custName").value;
-    const phone = document.getElementById("custPhone").value;
-    const address = document.getElementById("custAddress").value;
-
-    let msg = `*MG MANISHA GLOW AYURVEDIC*%0A%0A`;
-    msg += `*Customer:* ${name}%0A`;
-    msg += `*Phone:* ${phone}%0A`;
-    msg += `*Address:* ${address}%0A%0A`;
-
-    msg += `*Order Details:*%0A`;
-    rows.forEach(r => {
-        msg += `${r.name} (${r.qty} × ₹${r.price}) = ₹${r.lineTotal}%0A`;
-    });
-
-    msg += `%0A*Grand Total:* ₹${totalAmount}`;
-
-    window.open(`https://wa.me/${phone}?text=${msg}`, "_blank");
+/* CLOSE SHEET */
+function closeSheet(){
+    document.getElementById("sheet").classList.remove("open");
+    setTimeout(()=>document.getElementById("sheetOverlay").style.display="none",250);
 }
 
-function generatePDF() {
-    alert("PDF Feature Next Update 🔥 (Fully Auto PDF)");
+document.getElementById("sheetOverlay").addEventListener("click",(e)=>{
+    if(e.target.id==="sheetOverlay") closeSheet();
+});
+
+
+/* PLACE ORDER */
+function placeOrder(){
+    let name=custName.value.trim();
+    let phone=custPhone.value.trim();
+    let addr=custAddr.value.trim();
+    let total=totalAmount.value || "₹0";
+
+    if(!name||!phone||!addr){
+        alert("❗ कृपया Name, Phone और Address भरें!");
+        return;
+    }
+
+    let msg = 
+`🧾 New Order
+
+Name: ${name}
+Phone: ${phone}
+Address:
+${addr}
+
+Total: ${total}`;
+
+    window.open("https://wa.me/918888942084?text="+encodeURIComponent(msg));
 }
+
 </script>
 
 </body>
