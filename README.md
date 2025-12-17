@@ -3,62 +3,166 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>MG Manisha Glow Ayurvedic — Order & Invoice</title>
+<title>🌿 MG Manisha Glow Ayurvedic</title>
 
-<!-- Libraries -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!-- Styles -->
 <style>
+/* ---------- Page styles ---------- */
 :root{
-  --green:#244a2e;
-  --gold:#d4af37;
-  --bg:#fffdf7;
+  --green:#2e4a27;
+  --gold:#d4b36a;
+  --bg:#fffdf9;
 }
-body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);-webkit-font-smoothing:antialiased}
-.container{max-width:1100px;margin:18px auto;padding:18px}
-.header{display:flex;align-items:center;gap:18px}
-.header img{width:110px}
-.title{font-size:22px;color:var(--green);font-weight:700}
-.subtitle{color:#6b5a2f;font-size:14px;margin-top:4px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:14px}
-.card{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-label{display:block;font-size:13px;color:#333;margin-bottom:6px}
-select,input[type="number"],input[type="text"],textarea{width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;font-size:14px}
-.btn{background:var(--green);color:white;padding:10px;border:none;border-radius:8px;cursor:pointer}
-.btn.secondary{background:#128c7e}
-.row-actions{display:flex;gap:8px;margin-top:8px}
-.top-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-.small{padding:8px;font-size:14px}
-.order-box{margin-top:16px;background:#fff;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-.footer{margin-top:18px;text-align:center;color:#666}
 
-/* Invoice preview styles (what will go to PDF) */
-#invoicePreview{
-  width:800px;max-width:100%;margin:12px auto;padding:18px;border-radius:12px;background:#fff;border:4px solid var(--gold);box-shadow:0 12px 36px rgba(0,0,0,0.12);display:none;
-  font-size:14px;color:#222;
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
-.inv-header{text-align:center;border-bottom:3px solid var(--gold);padding-bottom:12px;margin-bottom:12px}
-.inv-header img{width:110px}
-.inv-title{font-family:Georgia,serif;font-size:26px;color:var(--green);margin-top:6px}
-.inv-sub{color:#6b5a2f;font-size:13px}
-.inv-top{display:flex;justify-content:space-between;gap:12px;margin-top:12px}
-.inv-left{max-width:60%}
-.inv-right{text-align:right;min-width:150px}
-.inv-table{width:100%;border-collapse:collapse;margin-top:12px}
-.inv-table th{background:var(--green);color:#fff;padding:10px;text-align:left}
-.inv-table td{padding:10px;border-bottom:1px solid #eee}
-.inv-total{text-align:right;margin-top:12px;font-weight:700;color:var(--green);font-size:18px}
-.stamp{display:inline-block;padding:8px 12px;border-radius:8px;border:2px dashed var(--gold);color:var(--gold);font-weight:700;margin-top:10px}
-.signature{margin-top:20px;display:flex;justify-content:space-between;align-items:center}
-.sign-box{width:200px;text-align:center}
-.sign-line{border-top:1px solid #999;padding-top:8px;color:#555;font-size:13px}
+
+/* Watermark */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:url('main-logo.jpg');
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:520px;
+  opacity:0.08;
+  z-index:-1;
+}
+
+.container{
+  max-width:1100px;
+  margin:18px auto;
+  padding:18px;
+}
+
+/* Header */
+.top-logo{ display:block; margin:10px auto; width:130px; }
+h1,h2{ text-align:center; color:var(--green); margin:6px 0; }
+h1{ font-family:'Marcellus', serif; font-size:30px; }
+
+/* Grid cards */
+.products, .facepack{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:14px;
+  margin-top:18px;
+}
+.card{
+  background: rgba(255,255,255,0.95);
+  border-radius:12px;
+  padding:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  text-align:center;
+}
+.card input[type="number"]{
+  width:100%;
+  padding:8px;
+  margin-top:10px;
+  border-radius:8px;
+  border:1px solid #cfcfcf;
+}
+
+/* Buttons */
+.btn{
+  background: var(--green);
+  color:white;
+  border: none;
+  padding:10px;
+  width:100%;
+  margin-top:12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:15px;
+}
+.btn.secondary{ background:#128c7e; }
+
+/* Order box */
+.order-box{
+  max-width:680px;
+  margin:24px auto;
+  background: rgba(255,255,255,0.96);
+  padding:16px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+.order-box input, .order-box textarea{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #d0d0d0;
+  margin-top:10px;
+  font-size:14px;
+}
+.order-box textarea{ min-height:64px; resize:vertical; }
+
+/* company details */
+.company-details{
+  margin-top:22px;
+  text-align:center;
+  background: rgba(255,255,255,0.95);
+  padding:14px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* footer */
+footer{ text-align:center; color:#666; margin-top:22px; padding-bottom:20px; }
+
+/* Bottom sheet (reports) */
+.sheet-overlay{ position:fixed; inset:0; display:none; background:rgba(0,0,0,0.35); justify-content:flex-end; z-index:9999; }
+.sheet{ width:100%; max-width:1100px; background:#fff; border-radius:18px 18px 0 0; padding:18px; transform:translateY(100%); transition:transform 240ms ease; box-shadow:0 -12px 40px rgba(0,0,0,0.25); max-height:70vh; overflow:auto; }
+.sheet.open{ transform:translateY(0%); }
+
+/* small helpers */
+.table-simple{ width:100%; border-collapse:collapse; }
+.table-simple td, .table-simple th{ padding:8px; border-bottom:1px solid #eee; font-size:14px; }
+
+/* ---------- Invoice (hidden) premium gold style ---------- */
+#invoiceArea{
+  width:800px;
+  max-width:100%;
+  margin:0 auto;
+  background:#fff;
+  border-radius:14px;
+  padding:24px;
+  box-shadow:0 10px 34px rgba(0,0,0,0.12);
+  border:4px solid var(--gold);
+  font-family: 'Poppins', sans-serif;
+  color:#222;
+}
+.inv-header{ text-align:center; border-bottom:3px solid var(--gold); padding-bottom:14px; margin-bottom:12px; }
+.inv-header img{ width:110px; display:block; margin:0 auto 6px; }
+.inv-brand{ font-family:'Marcellus', serif; font-size:28px; color:var(--green); margin-bottom:4px; }
+.inv-tag{ color:#775f2b; font-size:13px; }
+
+/* invoice top info */
+.inv-top{ display:flex; justify-content:space-between; gap:12px; margin-top:12px; }
+.inv-left{ max-width:58%; }
+.inv-right{ text-align:right; min-width:150px; font-size:14px; }
+
+/* items table */
+.inv-table{ width:100%; border-collapse:collapse; margin-top:12px; }
+.inv-table th{ background:var(--green); color:#fff; padding:10px; text-align:left; font-weight:600; }
+.inv-table td{ padding:10px; border-bottom:1px solid #eee; }
+
+/* total box */
+.inv-total{ text-align:right; margin-top:12px; font-weight:700; font-size:18px; color:var(--green); }
+
+/* hide invoice area visually on page but keep for PDF generation */
+.hidden-print { display:none; }
 
 /* responsive */
 @media(max-width:720px){
-  .inv-top{flex-direction:column}
-  .inv-right{text-align:left}
+  .inv-top{ flex-direction:column; align-items:flex-start; }
+  .inv-right{ text-align:left; }
 }
 </style>
 </head>
@@ -66,79 +170,89 @@ select,input[type="number"],input[type="text"],textarea{width:100%;padding:8px;b
 
 <div class="container">
 
-  <!-- Header -->
-  <div class="header">
-    <img src="main-logo.jpg" alt="Logo" id="pageLogo">
-    <div>
-      <div class="title">MG Manisha Glow Ayurvedic</div>
-      <div class="subtitle">Premium Ayurvedic Home-made Soaps & Face Packs</div>
-    </div>
+  <img src="main-logo.jpg" class="top-logo" alt="Logo">
+
+  <h1>🌿 MG Manisha Glow Ayurvedic</h1>
+  <h2>✨ Premium Home-Made Ayurvedic Products</h2>
+
+  <!-- SOAPS -->
+  <h2>🧼 Soap Collection (₹50 Each)</h2>
+  <div class="products">
+    <div class="card"><h3>🍃 Neem Soap</h3><input type="number" id="Neem" min="0" placeholder="Quantity"><button class="btn" onclick="openSheet('neem')">View Report</button></div>
+    <div class="card"><h3>🌿 Tulasi Soap</h3><input type="number" id="Tulasi" min="0" placeholder="Quantity"><button class="btn" onclick="openSheet('tulasi')">View Report</button></div>
+    <div class="card"><h3>🍀 Aloe Vera Soap</h3><input type="number" id="Aloe" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>🥛 Goat Milk Soap</h3><input type="number" id="Goat" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>🖤 Charcoal Soap</h3><input type="number" id="Charcoal" min="0" placeholder="Quantity"><button class="btn" onclick="openSheet('charcoal')">View Report</button></div>
+    <div class="card"><h3>✨ Turmeric Soap</h3><input type="number" id="Turmeric" min="0" placeholder="Quantity"><button class="btn" onclick="openSheet('turmeric')">View Report</button></div>
+    <div class="card"><h3>🍚 Rice Potato Soap</h3><input type="number" id="Rice" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>Bheem Sen Kapur Soap</h3><input type="number" id="Bheem" min="0" placeholder="Quantity"></div>
   </div>
 
-  <!-- Product selection area -->
-  <div style="margin-top:14px">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <div style="font-weight:700;color:var(--green)">Create Order (Select products below)</div>
-      <div class="top-actions">
-        <button class="btn small" onclick="addRow()">+ Add Item</button>
-        <button class="btn small secondary" onclick="clearRows()">Reset Items</button>
-      </div>
-    </div>
-
-    <div id="itemsContainer" style="margin-top:12px"></div>
+  <!-- facepack -->
+  <h2>🌸 Face Pack Collection (₹30 Each)</h2>
+  <div class="facepack">
+    <div class="card"><h3>🍃 Neem Leaf Powder</h3><input type="number" id="NFP" min="0" placeholder="Quantity"></div>
+    <div class="card"><h3>💧 Moisturizer Cream</h3><input type="number" id="MFP" min="0" placeholder="Quantity"></div>
   </div>
 
-  <!-- Order & Customer details -->
+  <!-- Order -->
   <div class="order-box">
-    <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <div style="flex:1">
-        <label>Customer Name</label>
-        <input type="text" id="custName" placeholder="Customer name">
-      </div>
-      <div style="width:220px">
-        <label>Phone</label>
-        <input type="text" id="custPhone" placeholder="Phone number">
-      </div>
-      <div style="flex-basis:100%">
-        <label>Address</label>
-        <textarea id="custAddr" placeholder="Full address (for delivery)"></textarea>
-      </div>
-    </div>
+    <h2>📝 Customer Details</h2>
+    <input type="text" id="custName" placeholder="👤 Your Name">
+    <input type="text" id="custPhone" placeholder="📞 Phone Number">
+    <textarea id="custAddr" placeholder="🏠 Full Address"></textarea>
 
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;gap:12px;flex-wrap:wrap">
-      <div style="flex:1">
-        <div style="font-size:14px;color:#333">Invoice #: <strong id="invNoDisplay"></strong> &nbsp;&nbsp; Date: <strong id="invDateDisplay"></strong></div>
-      </div>
+    <input type="text" id="totalAmount" placeholder="💵 Total Amount (Auto)" readonly>
 
-      <div style="min-width:220px;text-align:right">
-        <div style="font-size:14px;color:#333">Grand Total</div>
-        <div style="font-size:20px;color:var(--green);font-weight:700">₹ <span id="grandTotal">0</span></div>
-      </div>
-    </div>
-
-    <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
-      <button class="btn" onclick="sendWhatsAppOrder()">📩 Send Order via WhatsApp</button>
-      <button class="btn" onclick="generateInvoicePDF()">📄 Download Invoice (PDF)</button>
-      <button class="btn secondary" onclick="shareInvoiceWhatsApp()">📤 Share Invoice Text (WhatsApp)</button>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;">
+      <button class="btn" onclick="placeOrder()">📩 WhatsApp Order भेजें</button>
+      <button class="btn secondary" onclick="generateInvoicePDF()">📄 Download Invoice PDF</button>
+      <button class="btn" style="background:#128c7e" onclick="shareInvoiceWhatsApp()">📤 Share Invoice (WhatsApp)</button>
     </div>
   </div>
 
-  <div class="footer">© <span id="year"></span> MG Manisha Glow Ayurvedic</div>
+  <!-- Company details -->
+  <div class="company-details">
+    <p><b>🏢 Contact Name:</b> MG Manisha Glow Ayurvedic</p>
+    <p><b>📞 Mobile:</b> 8888942084</p>
+    <p><b>💬 WhatsApp:</b> 8888942084</p>
+    <p><b>📍 Address:</b> Rawande, Kopargaon, Ahilyanagar 423601</p>
+    <p><b>📧 Email:</b> mgayurvedicc@gmail.com</p>
+  </div>
+
+  <img src="main-logo.jpg" class="top-logo" style="width:110px;margin-top:16px" alt="logo">
+
+  <footer>© <span id="year"></span> MG Manisha Glow Ayurvedic 🌿</footer>
 </div>
 
-<!-- Hidden invoice area (used to render PDF) -->
-<div id="invoicePreview">
+<!-- bottom sheet for reports -->
+<div class="sheet-overlay" id="sheetOverlay">
+  <div class="sheet" id="sheet">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <strong id="sheetTitle">Report</strong>
+      <button class="btn" onclick="closeSheet()" style="width:auto;background:#2c5f2d">Close</button>
+    </div>
+    <div id="sheetContent"></div>
+    <div style="margin-top:12px">
+      <button class="btn" id="shareBtn">📤 Share Report</button>
+      <button class="btn" id="pdfBtn" style="background:#444">📄 Download Report</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= Hidden Invoice Area (for PDF) ================= -->
+<div id="invoiceArea" class="hidden-print" style="display:none;">
   <div class="inv-header">
     <img src="main-logo.jpg" alt="Logo">
-    <div class="inv-title">MG Manisha Glow Ayurvedic</div>
-    <div class="inv-sub">Premium Ayurvedic Skin Care Products</div>
+    <div class="inv-brand">MG Manisha Glow Ayurvedic</div>
+    <div class="inv-tag">Premium Ayurvedic Skin Care Products</div>
   </div>
 
   <div class="inv-top">
     <div class="inv-left">
-      <div><strong>Bill To:</strong> <span id="invCustName"></span></div>
+      <div><strong>To:</strong> <span id="invCustName"></span></div>
       <div><strong>Phone:</strong> <span id="invCustPhone"></span></div>
-      <div style="margin-top:6px"><strong>Address:</strong><div id="invCustAddr"></div></div>
+      <div><strong>Address:</strong> <div id="invCustAddr" style="margin-top:6px"></div></div>
     </div>
     <div class="inv-right">
       <div><strong>Invoice No:</strong> <span id="invNo"></span></div>
@@ -146,296 +260,262 @@ select,input[type="number"],input[type="text"],textarea{width:100%;padding:8px;b
     </div>
   </div>
 
-  <table class="inv-table" id="invTable">
+  <table class="inv-table" id="invTable" style="margin-top:14px;">
     <thead>
-      <tr><th style="width:55%">Product</th><th style="width:15%">Qty</th><th style="width:15%">Rate (₹)</th><th style="width:15%">Total (₹)</th></tr>
+      <tr>
+        <th style="width:55%;">Product</th>
+        <th style="width:15%;">Qty</th>
+        <th style="width:15%;">Rate (₹)</th>
+        <th style="width:15%;">Total (₹)</th>
+      </tr>
     </thead>
     <tbody id="invItems"></tbody>
   </table>
 
   <div class="inv-total">Grand Total: ₹ <span id="invGrand">0</span></div>
-
-  <div style="margin-top:10px">
-    <span class="stamp">PAID ON DELIVERY</span>
-  </div>
-
-  <div class="signature">
-    <div class="sign-box">
-      <div class="sign-line">Customer Signature</div>
-    </div>
-    <div class="sign-box" style="text-align:right">
-      <div style="font-weight:700;color:var(--green);">Authorized Signatory</div>
-      <div class="sign-line">MG Manisha Glow</div>
-    </div>
-  </div>
 </div>
 
-<!-- Script -->
+<!-- html2pdf library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <script>
-/* ---------- Data & Init ---------- */
-
-// product catalog (dropdown options)
-const PRODUCTS = [
-  {id:'Neem Soap', price:50},
-  {id:'Tulasi Soap', price:50},
-  {id:'Aloe Vera Soap', price:50},
-  {id:'Goat Milk Soap', price:50},
-  {id:'Charcoal Soap', price:50},
-  {id:'Turmeric Soap', price:50},
-  {id:'Rice Potato Soap', price:50},
-  {id:'Bheem Sen Kapur Soap', price:50},
-  {id:'Neem Leaf Powder', price:30},
-  {id:'Moisturizer Cream', price:30}
-];
-
-let rowCounter = 0;
-const itemsContainer = document.getElementById('itemsContainer');
-const grandTotalEl = document.getElementById('grandTotal');
-const invNoDisplay = document.getElementById('invNoDisplay');
-const invDateDisplay = document.getElementById('invDateDisplay');
+/* =========== INIT =========== */
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// generate invoice no & date
-function generateInvoiceMeta(){
-  const invNo = 'INV' + Date.now().toString().slice(-8);
-  const dateStr = new Date().toLocaleDateString('en-IN', {day:'2-digit',month:'short',year:'numeric'});
-  document.getElementById('invNo').innerText = invNo;
-  document.getElementById('invNoDisplay').innerText = invNo;
-  document.getElementById('invDate').innerText = dateStr;
-  document.getElementById('invDateDisplay').innerText = dateStr;
-}
-generateInvoiceMeta();
+/* Pricing map */
+const PRICING = {
+  Neem:50, Tulasi:50, Aloe:50, Goat:50, Charcoal:50, Turmeric:50, Rice:50, Bheem:50,
+  NFP:30, MFP:30
+};
 
-/* ---------- Rows: add / remove ---------- */
-function createProductSelectHtml(rowId){
-  let optHtml = PRODUCTS.map(p=>`<option value="${p.id}" data-price="${p.price}">${p.id} — ₹${p.price}</option>`).join('');
-  return `<div style="display:flex;gap:8px;align-items:center">
-      <select onchange="onProductChange(${rowId})" id="prod_${rowId}">${optHtml}</select>
-      <input type="number" id="qty_${rowId}" value="1" min="0" style="width:80px" onchange="onQtyChange(${rowId})">
-      <input type="text" id="rate_${rowId}" readonly style="width:120px" value="₹0">
-      <input type="text" id="ltotal_${rowId}" readonly style="width:120px" value="₹0">
-      <button class="btn small" onclick="removeRow(${rowId})" style="background:#b33">Remove</button>
-    </div>`;
-}
+/* Bind calcTotal to number inputs */
+document.querySelectorAll("input[type='number']").forEach(i => i.addEventListener("input", calcTotal));
+calcTotal(); // initial
 
-function addRow(selectedId=null, qty=1){
-  rowCounter++;
-  const rowId = rowCounter;
-  const wrapper = document.createElement('div');
-  wrapper.className = 'card';
-  wrapper.id = `row_${rowId}`;
-  wrapper.innerHTML = `<label>Item ${rowId}</label>` + createProductSelectHtml(rowId);
-  itemsContainer.appendChild(wrapper);
-
-  // set default selection & qty then update values
-  if(selectedId){
-    const sel = document.getElementById(`prod_${rowId}`);
-    sel.value = selectedId;
+function calcTotal(){
+  let total=0;
+  for(let key in PRICING){
+    const el=document.getElementById(key);
+    if(!el) continue;
+    const q=parseInt(el.value)||0;
+    total += q * PRICING[key];
   }
-  document.getElementById(`qty_${rowId}`).value = qty;
-  onProductChange(rowId);
-  calcGrandTotal();
+  document.getElementById("totalAmount").value = total ? "₹ " + total : "";
 }
 
-// remove a row
-function removeRow(rowId){
-  const el = document.getElementById(`row_${rowId}`);
-  if(el){ el.remove(); calcGrandTotal(); }
-}
-
-// clear all rows
-function clearRows(){
-  itemsContainer.innerHTML = '';
-  rowCounter = 0;
-  addRow(); // add one empty row
-}
-
-/* ---------- when product or qty changes ---------- */
-function onProductChange(rowId){
-  const sel = document.getElementById(`prod_${rowId}`);
-  const selectedPrice = parseFloat(sel.options[sel.selectedIndex].getAttribute('data-price')) || 0;
-  document.getElementById(`rate_${rowId}`).value = '₹' + selectedPrice;
-  // update line total
-  const qty = parseInt(document.getElementById(`qty_${rowId}`).value) || 0;
-  document.getElementById(`ltotal_${rowId}`).value = '₹' + (qty * selectedPrice);
-  calcGrandTotal();
-}
-
-function onQtyChange(rowId){
-  const sel = document.getElementById(`prod_${rowId}`);
-  const selectedPrice = parseFloat(sel.options[sel.selectedIndex].getAttribute('data-price')) || 0;
-  const qty = parseInt(document.getElementById(`qty_${rowId}`).value) || 0;
-  document.getElementById(`ltotal_${rowId}`).value = '₹' + (qty * selectedPrice);
-  calcGrandTotal();
-}
-
-/* ---------- calculate grand total ---------- */
-function calcGrandTotal(){
-  let total = 0;
-  for(let i=1;i<=rowCounter;i++){
-    const row = document.getElementById(`row_${i}`);
-    if(!row) continue;
-    const sel = document.getElementById(`prod_${i}`);
-    const qtyInput = document.getElementById(`qty_${i}`);
-    if(!sel || !qtyInput) continue;
-    const price = parseFloat(sel.options[sel.selectedIndex].getAttribute('data-price')) || 0;
-    const qty = parseInt(qtyInput.value) || 0;
-    total += price * qty;
+/* ========== Reports data ========== */
+const REPORTS = {
+  neem:{
+    title:"🍃 Neem Soap - Lab Report",
+    data:`PH at 25°C: 6.13
+Lather: 212 ml
+Mush: 18.5 g
+Free Caustic Alkali: Absent
+Free Carbonated Alkali: Absent
+Grittiness: Passed
+Cracking: Passed
+Cleaning Efficiency: Passed
+Total Fatty Matter: 56.52%
+Synthetic Surface Active Agent: 52.14
+Fatty Matter From Dissolved Actives: 10.13`
+  },
+  tulasi:{
+    title:"🌿 Tulasi Soap - Lab Report",
+    data:`PH at 25°C: 5.89
+Lather: 204.3 ml
+Mush: 18.5 g
+Free Caustic Alkali: Absent
+Free Carbonated Alkali: Absent
+Grittiness: Passed
+Cracking: Passed
+Cleaning Efficiency: Passed
+Total Fatty Matter: 54.6%
+Synthetic Surface Active Agent: 46.2
+Fatty Matter From Dissolved Actives: 8.72`
+  },
+  charcoal:{
+    title:"🖤 Charcoal Soap - Lab Report",
+    data:`PH at 25°C: 6.64
+Lather: 202 ml
+Mush: 16.1 g
+Free Caustic Alkali: Absent
+Free Carbonated Alkali: Absent
+Grittiness: Passed
+Cracking: Passed
+Cleaning Efficiency: Passed
+Total Fatty Matter: 43%
+Synthetic Surface Active Agent: 44.8
+Fatty Matter From Dissolved Actives: 11.02`
+  },
+  turmeric:{
+    title:"✨ Turmeric Soap - Lab Report",
+    data:`PH at 25°C: 6.28
+Lather: 216.5 ml
+Mush: 22.3 g
+Free Caustic Alkali: Absent
+Free Carbonated Alkali: Absent
+Grittiness: Passed
+Cracking: Passed
+Cleaning Efficiency: Passed
+Total Fatty Matter: 64%
+Synthetic Surface Active Agent: 45.1
+Fatty Matter From Dissolved Actives: 18.0`
   }
-  grandTotalEl.innerText = total;
-  return total;
+};
+
+/* ========== Bottom sheet functions ========== */
+function openSheet(key){
+  const r = REPORTS[key];
+  if(!r) return;
+  document.getElementById("sheetTitle").innerText = r.title;
+  let html = "<table class='table-simple'>";
+  r.data.split("\n").forEach(line=>{
+    const parts = line.split(":");
+    const k = parts.shift();
+    const v = parts.join(":");
+    html += `<tr><td style="width:50%"><strong>${k}</strong></td><td>${v || ''}</td></tr>`;
+  });
+  html += "</table>";
+  document.getElementById("sheetContent").innerHTML = html;
+
+  document.getElementById("sheetOverlay").style.display = "flex";
+  setTimeout(()=>document.getElementById("sheet").classList.add("open"),20);
+
+  document.getElementById("shareBtn").onclick = ()=>{
+    const msg = r.title + "\n\n" + r.data;
+    window.open("https://wa.me/?text="+encodeURIComponent(msg));
+  };
+
+  document.getElementById("pdfBtn").onclick = ()=>{
+    const blob = new Blob([r.title+"\n\n"+r.data], {type:'text/plain'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url; a.download = (r.title || 'report') + '.txt';
+    a.click();
+  };
 }
+function closeSheet(){
+  document.getElementById("sheet").classList.remove("open");
+  setTimeout(()=>document.getElementById("sheetOverlay").style.display="none",220);
+}
+document.getElementById("sheetOverlay").addEventListener("click",(e)=>{ if(e.target.id==="sheetOverlay") closeSheet(); });
 
-/* ---------- initial row ---------- */
-addRow();
-
-/* ---------- WhatsApp Order message (full items list) ---------- */
-function sendWhatsAppOrder(){
+/* ========== Order sending ========== */
+function placeOrder(){
   const name = document.getElementById('custName').value.trim();
-  const phone = document.getElementById('custPhone').value.trim();
+  const phone= document.getElementById('custPhone').value.trim();
   const addr = document.getElementById('custAddr').value.trim();
-  if(!name || !phone || !addr){
-    alert('कृपया Name, Phone और Address भरें।');
-    return;
-  }
+  const total = document.getElementById('totalAmount').value || "₹0";
 
-  // build items
-  let itemLines = '';
-  let any=false;
-  for(let i=1;i<=rowCounter;i++){
-    const row = document.getElementById(`row_${i}`);
-    if(!row) continue;
-    const sel = document.getElementById(`prod_${i}`);
-    const qty = parseInt(document.getElementById(`qty_${i}`).value) || 0;
+  if(!name || !phone || !addr){ alert("❗ कृपया Name, Phone और Address भरें!"); return; }
+
+  // Build order summary
+  let summary = "🧾 New Order\n\nName: " + name + "\nPhone: " + phone + "\nAddress:\n" + addr + "\n\nItems:\n";
+  for(let key in PRICING){
+    const qty = parseInt(document.getElementById(key).value) || 0;
     if(qty>0){
-      const price = parseFloat(sel.options[sel.selectedIndex].getAttribute('data-price')) || 0;
-      const lineTotal = price * qty;
-      itemLines += `• ${sel.value} — ${qty} pcs = ₹${lineTotal}\n`;
-      any = true;
+      summary += `${key} x ${qty} = ₹${qty * PRICING[key]}\n`;
     }
   }
-  if(!any){
-    alert('कृपया कम से कम एक item चुनें और quantity डालें।');
-    return;
-  }
+  summary += `\nTotal: ${total}\n\nThank you! 🌿`;
 
-  const total = calcGrandTotal();
-  const invNo = document.getElementById('invNo').innerText || document.getElementById('invNoDisplay').innerText;
-
-  const msg = `🧾 *New Order — ${invNo}*\n\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n🏠 *Address:* ${addr}\n\n📦 *Order Items:*\n${itemLines}\n💵 *Grand Total:* ₹${total}\n\nधन्यवाद 🌿`;
-  // Open WhatsApp (to your number). Change number if needed.
-  window.open('https://wa.me/918888942084?text=' + encodeURIComponent(msg));
+  // Open WhatsApp with prefilled message
+  window.open("https://wa.me/918888942084?text="+encodeURIComponent(summary));
 }
 
-/* ---------- Build invoice area then generate PDF ---------- */
-async function generateInvoicePDF(){
-  // validate basic
-  const name = document.getElementById('custName').value.trim();
-  const phone = document.getElementById('custPhone').value.trim();
-  const addr = document.getElementById('custAddr').value.trim();
-  if(!name || !phone || !addr){
-    alert('कृपया Name, Phone और Address भरें।');
-    return;
-  }
-
-  // collect order
+/* ========== Invoice (PDF) generation ========== */
+function gatherOrderForInvoice(){
+  const cust = {
+    name: document.getElementById('custName').value.trim() || 'Customer',
+    phone: document.getElementById('custPhone').value.trim() || '',
+    addr: document.getElementById('custAddr').value.trim() || ''
+  };
   const items = [];
-  for(let i=1;i<=rowCounter;i++){
-    const row = document.getElementById(`row_${i}`);
-    if(!row) continue;
-    const sel = document.getElementById(`prod_${i}`);
-    const qty = parseInt(document.getElementById(`qty_${i}`).value) || 0;
+  let grand = 0;
+  for(let key in PRICING){
+    const qty = parseInt(document.getElementById(key).value) || 0;
     if(qty>0){
-      const price = parseFloat(sel.options[sel.selectedIndex].getAttribute('data-price')) || 0;
-      items.push({name: sel.value, qty, price, total: price*qty});
+      const rate = PRICING[key];
+      const total = qty*rate;
+      items.push({name:key, qty, rate, total});
+      grand += total;
     }
   }
-  if(items.length===0){
-    alert('कृपया कम से कम एक item चुनें और quantity डालें।');
-    return;
-  }
+  return {cust, items, grand};
+}
 
-  // populate invoice preview
-  document.getElementById('invCustName').innerText = name;
-  document.getElementById('invCustPhone').innerText = phone;
-  document.getElementById('invCustAddr').innerText = addr;
-  generateInvoiceMeta(); // refresh invoice no/date
+function populateInvoiceArea(orderData){
+  // invoice no + date
+  const invNo = 'INV' + Date.now().toString().slice(-8);
+  const invDate = new Date().toLocaleString('en-IN', {year:'numeric',month:'short',day:'numeric'});
 
+  document.getElementById('invNo').innerText = invNo;
+  document.getElementById('invDate').innerText = invDate;
+
+  document.getElementById('invCustName').innerText = orderData.cust.name;
+  document.getElementById('invCustPhone').innerText = orderData.cust.phone;
+  document.getElementById('invCustAddr').innerText = orderData.cust.addr;
+
+  // items
   const tbody = document.getElementById('invItems');
   tbody.innerHTML = '';
-  let grand = 0;
-  items.forEach(it=>{
+  orderData.items.forEach(it=>{
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${it.name}</td><td style="text-align:center">${it.qty}</td><td style="text-align:right">${it.price}</td><td style="text-align:right">${it.total}</td>`;
+    tr.innerHTML = `<td>${it.name}</td><td style="text-align:center">${it.qty}</td><td style="text-align:right">${it.rate}</td><td style="text-align:right">${it.total}</td>`;
     tbody.appendChild(tr);
-    grand += it.total;
   });
-  document.getElementById('invGrand').innerText = grand;
 
-  // show invoice preview for rendering
-  const preview = document.getElementById('invoicePreview');
-  preview.style.display = 'block';
+  document.getElementById('invGrand').innerText = orderData.grand;
+}
 
-  // small delay to ensure images/styles loaded
-  await new Promise(r=>setTimeout(r,300));
+function generateInvoicePDF(){
+  const order = gatherOrderForInvoice();
+  if(order.items.length === 0){
+    alert("❗ कोई item selected नहीं है — पहले कुछ quantity डालें।");
+    return;
+  }
+  populateInvoiceArea(order);
 
-  // render to canvas & pdf
-  try{
-    const canvas = await html2canvas(preview, {scale:2, useCORS:true, logging:false});
-    const imgData = canvas.toDataURL('image/png', 1.0);
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF('p','mm','a4');
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = pdf.internal.pageSize.getHeight();
-    // calculate image size to fit A4 width with aspect ratio
-    const imgProps = pdf.getImageProperties(imgData);
-    const imgWidth = pageWidth - 20; // margins
-    const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
-    let y = 10;
-    pdf.addImage(imgData, 'PNG', 10, y, imgWidth, imgHeight);
-    // filename
-    const invNo = document.getElementById('invNo').innerText || 'INV';
-    const filename = `${invNo}_MG_Invoice.pdf`;
-    pdf.save(filename);
-  }catch(err){
+  // show invoice area (temporarily) so styles apply, then generate
+  const inv = document.getElementById('invoiceArea');
+  inv.style.display = 'block';
+
+  const nameSafe = (order.cust.name || 'customer').replace(/\s+/g,'_').replace(/[^\w\-]/g,'');
+  const filename = `${nameSafe}_Invoice_${new Date().toISOString().slice(0,10)}.pdf`;
+
+  const opt = {
+    margin: [8,10],
+    filename: filename,
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS:true },
+    jsPDF: { unit: 'mm', format:'a4', orientation: 'portrait' }
+  };
+
+  // generate PDF
+  html2pdf().set(opt).from(inv).save().then(()=>{
+    // hide again
+    inv.style.display = 'none';
+  }).catch((err)=>{
     console.error(err);
+    inv.style.display = 'none';
     alert('PDF generate करते समय error आया — console देखें।');
-  }finally{
-    // hide preview again
-    preview.style.display = 'none';
-  }
+  });
 }
 
-/* ---------- Share invoice text (WhatsApp) ---------- */
+/* ========== Share invoice summary on WhatsApp (text only) ========== */
 function shareInvoiceWhatsApp(){
-  const name = document.getElementById('custName').value.trim();
-  const phone = document.getElementById('custPhone').value.trim();
-  const addr = document.getElementById('custAddr').value.trim();
-  if(!name || !phone || !addr){
-    alert('कृपया Name, Phone और Address भरें।');
+  const order = gatherOrderForInvoice();
+  if(order.items.length === 0){
+    alert("❗ कोई item selected नहीं है — पहले कुछ quantity डालें।");
     return;
   }
-  let itemLines = '';
-  for(let i=1;i<=rowCounter;i++){
-    const row = document.getElementById(`row_${i}`);
-    if(!row) continue;
-    const sel = document.getElementById(`prod_${i}`);
-    const qty = parseInt(document.getElementById(`qty_${i}`).value) || 0;
-    if(qty>0){
-      const price = parseFloat(sel.options[sel.selectedIndex].getAttribute('data-price')) || 0;
-      itemLines += `• ${sel.value} x ${qty} = ₹${price*qty}\n`;
-    }
-  }
-  if(!itemLines){
-    alert('कृपया कम से कम एक item चुनें और quantity डालें।');
-    return;
-  }
-  const total = calcGrandTotal();
-  const invNo = document.getElementById('invNo').innerText || document.getElementById('invNoDisplay').innerText;
-  const msg = `🧾 Invoice ${invNo}\n\nCustomer: ${name}\nPhone: ${phone}\nAddress:\n${addr}\n\nItems:\n${itemLines}\nGrand Total: ₹${total}\n\nThanks 🌿`;
-  window.open('https://wa.me/?text=' + encodeURIComponent(msg));
+  let text = `🧾 MG Manisha Glow - Invoice\n\nCustomer: ${order.cust.name}\nPhone: ${order.cust.phone}\nAddress:\n${order.cust.addr}\n\nItems:\n`;
+  order.items.forEach(it=>{
+    text += `${it.name} x ${it.qty} = ₹${it.total}\n`;
+  });
+  text += `\nGrand Total: ₹${order.grand}\n\nThank you 🌿`;
+  window.open("https://wa.me/?text="+encodeURIComponent(text));
 }
-
 </script>
 
 </body>
