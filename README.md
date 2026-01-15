@@ -297,3 +297,116 @@ ${addr}`;
 </body>
 </html>
 a
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MG Manisha Glow Ayurvedic – Soap Banner</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff4d6;
+        }
+
+        .banner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: #ffe9b3;
+            border: 5px solid #d9a441;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: bold;
+            color: #0a5c5a;
+            margin-bottom: 30px;
+        }
+
+        .soap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .soap-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .soap-card h3 {
+            background: #7b1e1e;
+            color: #fff;
+            padding: 8px;
+            margin: -10px -10px 10px -10px;
+            border-radius: 10px 10px 0 0;
+            font-size: 18px;
+        }
+
+        .soap-card img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+        }
+
+        .footer {
+            margin-top: 30px;
+            background: #7b1e1e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="banner">
+
+    <div class="title">आयुर्वेदिक साबण</div>
+
+    <div class="soap-grid">
+
+        <div class="soap-card">
+            <h3>Neem Tulsi</h3>
+            <img src="neem-tulsi.jpg">
+        </div>
+
+        <div class="soap-card">
+            <h3>Charcoal</h3>
+            <img src="charcoal.jpg">
+        </div>
+
+        <div class="soap-card">
+            <h3>Alum</h3>
+            <img src="alum.jpg">
+        </div>
+
+        <div class="soap-card">
+            <h3>Kapoor</h3>
+            <img src="kapoor.jpg">
+        </div>
+
+        <div class="soap-card">
+            <h3>Goat Milk</h3>
+            <img src="goat-milk.jpg">
+        </div>
+
+    </div>
+
+    <div class="footer">
+        MG Manisha Glow Ayurvedic <br>
+        Mob: 8888942084 / 6351470697
+    </div>
+
+</div>
+
+</body>
+</html>
+
