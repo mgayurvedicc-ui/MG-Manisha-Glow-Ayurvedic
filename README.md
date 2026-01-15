@@ -23,7 +23,8 @@
         width: 100%;
         height: 100%;
         background-image: url('main-logo.jpg');
-        background-repeat: no-repeat;
+        background-repeat: no-repeat;<img width="800" height="800" alt="Main Logo - Copy" src="https://github.com/user-attachments/assets/03d47064-ff9b-497c-b931-a0732aefb431" />
+
         background-position: center;
         background-size: 520px;
         opacity: 0.13;
@@ -400,7 +401,8 @@ a
 
     </div>
 
-    <div class="footer">
+    <div class="footer"><img width="800" height="800" alt="Main Logo - Copy" src="https://github.com/user-attachments/assets/8685de35-8cb8-4caa-a26e-e412228b4e66" />
+
         MG Manisha Glow Ayurvedic <br>
         Mob: 8888942084 / 6351470697
     </div>
