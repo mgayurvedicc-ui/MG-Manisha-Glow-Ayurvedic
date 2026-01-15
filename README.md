@@ -269,3 +269,31 @@ ${addr}`;
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MG Manisha Glow Ayurvedic</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+
+            /* Background Image */
+            background-image: url("Main Logo.png"); /* image ka naam */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            /* Optional overlay effect */
+            background-color: #0f3f3a;
+            background-blend-mode: overlay;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
+a
