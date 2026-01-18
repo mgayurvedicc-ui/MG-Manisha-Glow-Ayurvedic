@@ -6,123 +6,94 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{box-sizing:border-box}
 body{
     margin:0;
-    font-family:Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background:#fff8e6;
-    color:#333;
 }
 
-/* HEADER */
 header{
     background:#0f5c4d;
     color:white;
     padding:15px;
     text-align:center;
-    font-size:26px;
+    font-size:28px;
     font-weight:bold;
 }
 
-/* CONTAINER */
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
-    background:white;
+.banner{
+    background:#f4d37b;
+    padding:30px;
+    text-align:center;
 }
 
-/* PRODUCT */
-.product{
-    display:flex;
-    flex-wrap:wrap;
-    gap:30px;
-}
-
-/* IMAGES */
-.product-images{
-    flex:1;
-    min-width:300px;
-}
-.product-images img{
+.banner img{
     width:100%;
+    max-width:1000px;
     border-radius:10px;
-    border:1px solid #ddd;
 }
 
-/* DETAILS */
-.product-details{
-    flex:1;
-    min-width:300px;
-}
-.product-details h1{
-    color:#0f5c4d;
-    font-size:30px;
-}
-.price{
+.section-title{
+    text-align:center;
     font-size:26px;
     color:#7b1e1e;
+    margin:30px 0 10px;
     font-weight:bold;
-    margin:10px 0;
-}
-.badges span{
-    display:inline-block;
-    background:#e6f4ea;
-    color:#0f5c4d;
-    padding:6px 12px;
-    border-radius:20px;
-    margin:5px 5px 5px 0;
-    font-size:14px;
 }
 
-/* BUTTONS */
-.buttons{
-    margin:20px 0;
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
 }
+
+.card{
+    background:white;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    padding:15px;
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:contain;
+}
+
+.card h3{
+    color:#0f5c4d;
+    margin:10px 0 5px;
+}
+
+.card p{
+    font-size:14px;
+    color:#555;
+}
+
+.price{
+    font-size:18px;
+    color:#7b1e1e;
+    font-weight:bold;
+}
+
 .btn{
-    padding:14px 22px;
-    font-size:16px;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-}
-.cart{
-    background:#0f5c4d;
-    color:white;
-}
-.buy{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 18px;
     background:#7b1e1e;
     color:white;
-    margin-left:10px;
+    text-decoration:none;
+    border-radius:6px;
 }
 
-/* DESCRIPTION */
-.section{
-    margin-top:30px;
-}
-.section h2{
-    color:#7b1e1e;
-    border-bottom:2px solid #eee;
-    padding-bottom:5px;
-}
-.section ul{
-    padding-left:18px;
-}
-
-/* FOOTER */
 footer{
     background:#0f5c4d;
     color:white;
     text-align:center;
     padding:20px;
-    margin-top:40px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-    .product{
-        flex-direction:column;
-    }
+    margin-top:30px;
 }
 </style>
 </head>
@@ -133,56 +104,36 @@ footer{
 🌿 MG Manisha Glow Ayurvedic
 </header>
 
-<div class="container">
+<div class="banner">
+    <img src="banner.jpg" alt="Ayurvedic Soap Banner">
+</div>
 
-    <div class="product">
+<div class="section-title">Our Ayurvedic Soaps</div>
 
-        <!-- IMAGE -->
-        <div class="product-images">
-            <img src="soap.jpg" alt="Ayurvedic Soap">
-        </div>
+<div class="products">
 
-        <!-- DETAILS -->
-        <div class="product-details">
-            <h1>Ayurvedic Handmade Black Detox Soap</h1>
-
-            <div class="price">₹249</div>
-
-            <div class="badges">
-                <span>✔ Handmade</span>
-                <span>✔ Chemical Free</span>
-                <span>✔ Ayurvedic</span>
-                <span>✔ For All Skin Types</span>
-            </div>
-
-            <div class="buttons">
-                <button class="btn cart">Add to Cart</button>
-                <button class="btn buy">Buy Now</button>
-            </div>
-
-            <p>
-                Our Ayurvedic Handmade Black Detox Soap is enriched with
-                activated charcoal and natural herbs that deeply cleanse
-                the skin, remove toxins and control acne.
-            </p>
-        </div>
-
+    <div class="card">
+        <img src="neem.jpg">
+        <h3>Neem Tulsi Soap</h3>
+        <p>Removes acne & purifies skin</p>
+        <div class="price">₹199</div>
+        <a href="#" class="btn">Buy Now</a>
     </div>
 
-    <!-- DESCRIPTION -->
-    <div class="section">
-        <h2>Product Benefits</h2>
-        <ul>
-            <li>Removes dirt & toxins</li>
-            <li>Controls acne & pimples</li>
-            <li>Improves skin glow</li>
-            <li>No chemicals, no parabens</li>
-        </ul>
+    <div class="card">
+        <img src="charcoal.jpg">
+        <h3>Charcoal Detox Soap</h3>
+        <p>Deep cleansing & oil control</p>
+        <div class="price">₹249</div>
+        <a href="#" class="btn">Buy Now</a>
     </div>
 
-    <div class="section">
-        <h2>Ingredients</h2>
-        <p>Activated Charcoal, Coconut Oil, Herbal Extracts, Essential Oils</p>
+    <div class="card">
+        <img src="goatmilk.jpg">
+        <h3>Goat Milk Soap</h3>
+        <p>Nourishes dry skin</p>
+        <div class="price">₹229</div>
+        <a href="#" class="btn">Buy Now</a>
     </div>
 
 </div>
