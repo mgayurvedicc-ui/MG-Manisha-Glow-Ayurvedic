@@ -82,6 +82,7 @@ h2{margin-top:32px}
     margin-top:6px;
     border-radius:6px;
     border:none;
+    font-size:14px;
 }
 .order-box textarea{height:60px}
 
@@ -108,7 +109,7 @@ h2{margin-top:32px}
 
 .faq-item{margin-top:14px}
 .faq-q{font-weight:bold;color:#e7c76a}
-.faq-a{font-size:14px;color:#d8efe4;margin-top:6px}
+.faq-a{font-size:14px;color:#d8efe4;margin-top:6px;line-height:1.6}
 
 footer{
     text-align:center;
@@ -116,7 +117,11 @@ footer{
     font-size:14px;
     color:#cde7d7;
 }
-footer a{color:#e7c76a;text-decoration:none;font-weight:bold}
+footer a{
+    color:#e7c76a;
+    text-decoration:none;
+    font-weight:bold;
+}
 </style>
 </head>
 
@@ -129,82 +134,136 @@ footer a{color:#e7c76a;text-decoration:none;font-weight:bold}
 <h2>🧼 Ayurvedic Soap Collection (₹50 Each)</h2>
 
 <div class="products">
+
 <div class="card">
 <h3>🍃 Neem Tulsi Ayurvedic Soap</h3>
 <div class="small">For Face & Body</div>
-<div class="ingredients"><b>Ingredients:</b> Neem Tulsi Base, Extracts, Glycerin</div>
+<div class="ingredients">
+<b>Ingredients:</b> Activated Neem Tulsi Base, Neem Tulsi Extract, Glycerin,
+Vitamin E, Castor Oil, Vitamin C Serum, Fragrance Oil
+</div>
 <input type="number" id="neem" min="0" placeholder="Quantity">
 </div>
 
 <div class="card">
 <h3>🖤 Charcoal Ayurvedic Soap</h3>
 <div class="small">For Face & Body</div>
-<div class="ingredients"><b>Ingredients:</b> Activated Charcoal, Aloe Vera</div>
+<div class="ingredients">
+<b>Ingredients:</b> Activated Charcoal Base, Natural Oils, Glycerin,
+Aloe Vera Gel, Vitamin E
+</div>
 <input type="number" id="charcoal" min="0" placeholder="Quantity">
 </div>
 
 <div class="card">
 <h3>Turti (Alum) Ayurvedic Soap</h3>
-<div class="ingredients"><b>Ingredients:</b> Alum Base, Honey</div>
+<div class="small">For Face & Body</div>
+<div class="ingredients">
+<b>Ingredients:</b> Activated Alum Base, Honey, Aloe Vera Gel, Glycerin
+</div>
 <input type="number" id="alum" min="0" placeholder="Quantity">
 </div>
 
 <div class="card">
 <h3>Camphor (Kapoor) Ayurvedic Soap</h3>
-<div class="ingredients"><b>Ingredients:</b> Kapoor, Coconut Oil</div>
+<div class="small">For Face & Body</div>
+<div class="ingredients">
+<b>Ingredients:</b> Activated Kapoor Base, Bhim Seni Camphor,
+Coconut Oil, Glycerin
+</div>
 <input type="number" id="kapoor" min="0" placeholder="Quantity">
 </div>
 
 <div class="card">
 <h3>🥛 Goat Milk Ayurvedic Soap</h3>
-<div class="ingredients"><b>Ingredients:</b> Goat Milk, Almond Oil</div>
+<div class="small">For Face & Body</div>
+<div class="ingredients">
+<b>Ingredients:</b> Activated Goat Milk Base, Raw Goat Milk,
+Aloe Vera Gel, Almond Oil, Castor Oil
+</div>
 <input type="number" id="goat" min="0" placeholder="Quantity">
 </div>
+
 </div>
 
 <div class="order-box">
 <h2>📝 Order Details</h2>
-<input id="name" placeholder="Your Name">
-<input id="phone" placeholder="Phone Number">
-<textarea id="address" placeholder="Address"></textarea>
-<input id="total" placeholder="Total Amount" readonly>
+<input type="text" id="name" placeholder="Your Name">
+<input type="text" id="phone" placeholder="Phone Number">
+<textarea id="address" placeholder="Full Address"></textarea>
+<input type="text" id="total" placeholder="Total Amount (Auto)" readonly>
 <button class="btn" onclick="order()">📩 WhatsApp Order</button>
 </div>
 
-<!-- TEST REPORT SECTION -->
 <div class="section">
-<h2 style="cursor:pointer" onclick="toggleReports()">🧪 Soap Lab Test Reports (Click)</h2>
-<div id="reports" style="display:none">
-<div class="faq-item"><div class="faq-q">Neem Tulsi Soap</div><div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div></div>
-<div class="faq-item"><div class="faq-q">Charcoal Soap</div><div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div></div>
-<div class="faq-item"><div class="faq-q">Alum Soap</div><div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div></div>
-<div class="faq-item"><div class="faq-q">Kapoor Soap</div><div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div></div>
-<div class="faq-item"><div class="faq-q">Goat Milk Soap</div><div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div></div>
+<h2 style="cursor:pointer" onclick="toggleTestReports()">🧪 Soap Lab Test Reports (Click Here)</h2>
+
+<div id="testReports" style="display:none">
+
+<div class="faq-item">
+<div class="faq-q">🍃 Neem Tulsi Soap – Test Report</div>
+<div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div>
 </div>
+
+<div class="faq-item">
+<div class="faq-q">🖤 Charcoal Soap – Test Report</div>
+<div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">Turti (Alum) Soap – Test Report</div>
+<div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">Camphor (Kapoor) Soap – Test Report</div>
+<div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">🥛 Goat Milk Soap – Test Report</div>
+<div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<h2>📦 Track Your Order</h2>
+<p>
+<a href="https://www.indiapost.gov.in/home" target="_blank">
+👉 Track Order via India Post
+</a>
+</p>
 </div>
 
 <footer>
 📞 <a href="tel:8888942084">8888942084</a> |
-💬 <a href="https://wa.me/918888942084">WhatsApp</a> |
-📧 <a href="mailto:mgayurvedicc@gmail.com">Email</a>
-<br>© MG Manisha Glow Ayurvedic
+💬 <a href="https://wa.me/918888942084" target="_blank">WhatsApp</a> |
+📧 <a href="mailto:mgayurvedicc@gmail.com">Email</a> |
+📸 <a href="https://instagram.com/mg_manisha_glow_Ayurvedic_" target="_blank">Instagram</a> |
+🌐 <a href="https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/" target="_blank">Website</a>
+<br><br>
+© MG Manisha Glow Ayurvedic
 </footer>
 
 </div>
 
 <script>
 function calc(){
- total.value=(neem.value*50)+(charcoal.value*50)+(alum.value*50)+(kapoor.value*50)+(goat.value*50);
+ total.value =
+ (neem.value*50)+(charcoal.value*50)+(alum.value*50)+(kapoor.value*50)+(goat.value*50);
 }
 document.querySelectorAll("input[type=number]").forEach(i=>i.oninput=calc);
 
 function order(){
  let msg=`New Order
-Neem: ${neem.value}
+Neem Tulsi: ${neem.value}
 Charcoal: ${charcoal.value}
 Alum: ${alum.value}
 Kapoor: ${kapoor.value}
 Goat Milk: ${goat.value}
+
 Total: ₹${total.value}
 Name: ${name.value}
 Phone: ${phone.value}
@@ -212,9 +271,9 @@ Address: ${address.value}`;
  window.open("https://wa.me/918888942084?text="+encodeURIComponent(msg));
 }
 
-function toggleReports(){
- let r=document.getElementById("reports");
- r.style.display=r.style.display==="none"?"block":"none";
+function toggleTestReports(){
+ var box = document.getElementById("testReports");
+ box.style.display = box.style.display === "none" ? "block" : "none";
 }
 </script>
 
