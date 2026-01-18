@@ -291,3 +291,124 @@ function toggleTestReports(){
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧪 Soap Lab Test Reports | MG Manisha Glow Ayurvedic</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:linear-gradient(180deg,#0f2f1f,#143f2a);
+    color:#eaf6ef;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:24px;
+}
+
+h1{
+    text-align:center;
+    color:#eaf6ef;
+}
+
+.section{
+    background:rgba(20,63,42,.95);
+    padding:22px;
+    border-radius:18px;
+    border:1px solid rgba(201,162,77,.35);
+    margin-top:30px;
+}
+
+.item{
+    margin-top:16px;
+}
+
+.item h3{
+    color:#e7c76a;
+    margin-bottom:6px;
+}
+
+.item a{
+    color:#cde7d7;
+    text-decoration:none;
+    font-size:15px;
+}
+
+.item a:hover{
+    text-decoration:underline;
+}
+
+footer{
+    text-align:center;
+    margin:40px 0;
+    font-size:14px;
+    color:#cde7d7;
+}
+footer a{
+    color:#e7c76a;
+    text-decoration:none;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🧪 Soap Lab Test Reports</h1>
+
+<div class="section">
+
+<div class="item">
+<h3>🍃 Neem Tulsi Ayurvedic Soap</h3>
+<a href="https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/Soap%20LAB%20Report.pdf" target="_blank">
+📄 View Lab Test Report
+</a>
+</div>
+
+<div class="item">
+<h3>🖤 Charcoal Ayurvedic Soap</h3>
+<a href="https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/Soap%20LAB%20Report.pdf" target="_blank">
+📄 View Lab Test Report
+</a>
+</div>
+
+<div class="item">
+<h3>Turti (Alum) Ayurvedic Soap</h3>
+<a href="https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/Soap%20LAB%20Report.pdf" target="_blank">
+📄 View Lab Test Report
+</a>
+</div>
+
+<div class="item">
+<h3>Camphor (Kapoor) Ayurvedic Soap</h3>
+<a href="https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/Soap%20LAB%20Report.pdf" target="_blank">
+📄 View Lab Test Report
+</a>
+</div>
+
+<div class="item">
+<h3>🥛 Goat Milk Ayurvedic Soap</h3>
+<a href="https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/Soap%20LAB%20Report.pdf" target="_blank">
+📄 View Lab Test Report
+</a>
+</div>
+
+</div>
+
+<footer>
+🌿 MG Manisha Glow Ayurvedic <br>
+<a href="index.html">⬅ Back to Website</a>
+</footer>
+
+</div>
+
+</body>
+</html>
