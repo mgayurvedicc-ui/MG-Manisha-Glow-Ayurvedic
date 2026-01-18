@@ -15,7 +15,7 @@
 
 body{
     margin:0;
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family:"Segoe UI", Arial, sans-serif;
     background:linear-gradient(180deg,#0f2f1f,#143f2a);
     color:#eaf6ef;
 }
@@ -139,8 +139,7 @@ footer a{
 <h3>🍃 Neem Tulsi Ayurvedic Soap</h3>
 <div class="small">For Face & Body</div>
 <div class="ingredients">
-<b>Ingredients:</b> Activated Neem Tulsi Base, Neem Tulsi Extract, Glycerin,
-Vitamin E, Castor Oil, Vitamin C Serum, Fragrance Oil
+<b>Ingredients:</b> Neem Tulsi Base, Extracts, Glycerin
 </div>
 <input type="number" id="neem" min="0" placeholder="Quantity">
 </div>
@@ -149,37 +148,31 @@ Vitamin E, Castor Oil, Vitamin C Serum, Fragrance Oil
 <h3>🖤 Charcoal Ayurvedic Soap</h3>
 <div class="small">For Face & Body</div>
 <div class="ingredients">
-<b>Ingredients:</b> Activated Charcoal Base, Natural Oils, Glycerin,
-Aloe Vera Gel, Vitamin E
+<b>Ingredients:</b> Activated Charcoal, Aloe Vera
 </div>
 <input type="number" id="charcoal" min="0" placeholder="Quantity">
 </div>
 
 <div class="card">
 <h3>Turti (Alum) Ayurvedic Soap</h3>
-<div class="small">For Face & Body</div>
 <div class="ingredients">
-<b>Ingredients:</b> Activated Alum Base, Honey, Aloe Vera Gel, Glycerin
+<b>Ingredients:</b> Alum Base, Honey
 </div>
 <input type="number" id="alum" min="0" placeholder="Quantity">
 </div>
 
 <div class="card">
 <h3>Camphor (Kapoor) Ayurvedic Soap</h3>
-<div class="small">For Face & Body</div>
 <div class="ingredients">
-<b>Ingredients:</b> Activated Kapoor Base, Bhim Seni Camphor,
-Coconut Oil, Glycerin
+<b>Ingredients:</b> Kapoor, Coconut Oil
 </div>
 <input type="number" id="kapoor" min="0" placeholder="Quantity">
 </div>
 
 <div class="card">
 <h3>🥛 Goat Milk Ayurvedic Soap</h3>
-<div class="small">For Face & Body</div>
 <div class="ingredients">
-<b>Ingredients:</b> Activated Goat Milk Base, Raw Goat Milk,
-Aloe Vera Gel, Almond Oil, Castor Oil
+<b>Ingredients:</b> Goat Milk, Almond Oil
 </div>
 <input type="number" id="goat" min="0" placeholder="Quantity">
 </div>
@@ -188,41 +181,62 @@ Aloe Vera Gel, Almond Oil, Castor Oil
 
 <div class="order-box">
 <h2>📝 Order Details</h2>
-<input type="text" id="name" placeholder="Your Name">
-<input type="text" id="phone" placeholder="Phone Number">
+<input id="name" placeholder="Your Name">
+<input id="phone" placeholder="Phone Number">
 <textarea id="address" placeholder="Full Address"></textarea>
-<input type="text" id="total" placeholder="Total Amount (Auto)" readonly>
+<input id="total" placeholder="Total Amount (Auto)" readonly>
 <button class="btn" onclick="order()">📩 WhatsApp Order</button>
 </div>
 
+<!-- TEST REPORT SECTION -->
 <div class="section">
-<h2 style="cursor:pointer" onclick="toggleTestReports()">🧪 Soap Lab Test Reports (Click Here)</h2>
+<h2 style="cursor:pointer" onclick="toggleTestReports()">🧪 Soap Lab Test Reports (Click)</h2>
 
 <div id="testReports" style="display:none">
 
 <div class="faq-item">
-<div class="faq-q">🍃 Neem Tulsi Soap – Test Report</div>
-<div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div>
+<div class="faq-q">Neem Tulsi Soap</div>
+<div class="faq-a">
+<a href="https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/Soap%20LAB%20Report.pdf" target="_blank">
+📄 View Test Report
+</a>
+</div>
 </div>
 
 <div class="faq-item">
-<div class="faq-q">🖤 Charcoal Soap – Test Report</div>
-<div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div>
+<div class="faq-q">Charcoal Soap</div>
+<div class="faq-a">
+<a href="https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/Soap%20LAB%20Report.pdf" target="_blank">
+📄 View Test Report
+</a>
+</div>
 </div>
 
 <div class="faq-item">
-<div class="faq-q">Turti (Alum) Soap – Test Report</div>
-<div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div>
+<div class="faq-q">Alum Soap</div>
+<div class="faq-a">
+<a href="https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/Soap%20LAB%20Report.pdf" target="_blank">
+📄 View Test Report
+</a>
+</div>
 </div>
 
 <div class="faq-item">
-<div class="faq-q">Camphor (Kapoor) Soap – Test Report</div>
-<div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div>
+<div class="faq-q">Kapoor Soap</div>
+<div class="faq-a">
+<a href="https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/Soap%20LAB%20Report.pdf" target="_blank">
+📄 View Test Report
+</a>
+</div>
 </div>
 
 <div class="faq-item">
-<div class="faq-q">🥛 Goat Milk Soap – Test Report</div>
-<div class="faq-a"><a href="Soap LAB Report.pdf" target="_blank">📄 View Test Report</a></div>
+<div class="faq-q">Goat Milk Soap</div>
+<div class="faq-a">
+<a href="https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/Soap%20LAB%20Report.pdf" target="_blank">
+📄 View Test Report
+</a>
+</div>
 </div>
 
 </div>
@@ -240,9 +254,7 @@ Aloe Vera Gel, Almond Oil, Castor Oil
 <footer>
 📞 <a href="tel:8888942084">8888942084</a> |
 💬 <a href="https://wa.me/918888942084" target="_blank">WhatsApp</a> |
-📧 <a href="mailto:mgayurvedicc@gmail.com">Email</a> |
-📸 <a href="https://instagram.com/mg_manisha_glow_Ayurvedic_" target="_blank">Instagram</a> |
-🌐 <a href="https://mgayurvedicc-ui.github.io/MG-Manisha-Glow-Ayurvedic/" target="_blank">Website</a>
+📧 <a href="mailto:mgayurvedicc@gmail.com">Email</a>
 <br><br>
 © MG Manisha Glow Ayurvedic
 </footer>
@@ -251,14 +263,14 @@ Aloe Vera Gel, Almond Oil, Castor Oil
 
 <script>
 function calc(){
- total.value =
+ total.value=
  (neem.value*50)+(charcoal.value*50)+(alum.value*50)+(kapoor.value*50)+(goat.value*50);
 }
 document.querySelectorAll("input[type=number]").forEach(i=>i.oninput=calc);
 
 function order(){
  let msg=`New Order
-Neem Tulsi: ${neem.value}
+Neem: ${neem.value}
 Charcoal: ${charcoal.value}
 Alum: ${alum.value}
 Kapoor: ${kapoor.value}
@@ -272,8 +284,8 @@ Address: ${address.value}`;
 }
 
 function toggleTestReports(){
- var box = document.getElementById("testReports");
- box.style.display = box.style.display === "none" ? "block" : "none";
+ let r=document.getElementById("testReports");
+ r.style.display=r.style.display==="none"?"block":"none";
 }
 </script>
 
